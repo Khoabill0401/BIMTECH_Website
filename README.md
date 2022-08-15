@@ -2,6 +2,6 @@
  
 # OnlySell was here
 
-# Dzinh here
+# Dzinh Lord here
 
 # Suporter was here
