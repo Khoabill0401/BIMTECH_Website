@@ -1,0 +1,391 @@
+/* CSS Document */
+/* Đổi màu thanh cuộn trình duyệt */
+::-webkit-scrollbar {
+background : linear-gradient(to bottom, bisque, burlywood, bisque);
+background : -moz-linear-gradient(bottom, bisque, burlywood, bisque);
+background : -webkit-linear-gradient(bottom, bisque, burlywood, bisque);
+background : -o-linear-gradient(bottom, bisque, burlywood, bisque);
+width:15px;
+}
+::-webkit-scrollbar-thumb {
+background : linear-gradient(to bottom, bisque, burlywood, bisque);
+background : -moz-linear-gradient(bottom, bisque, burlywood, bisque);
+background : -webkit-linear-gradient(bottom, bisque, burlywood, bisque);
+background : -o-linear-gradient(bottom, bisque, burlywood, bisque);
+border-radius:15px;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	font-family: Times New Roman;
+	font-size: 14px;
+	box-sizing: border-box;
+}
+main{
+	display: flex;
+}
+.Downloads{
+	max-width:1500px;
+	display: flex;
+	margin: auto;
+}
+.Main-Table{
+	font-size: 14px;
+	width: 70%;
+	height: 1000px;
+	margin: 0px auto;
+}
+
+.header-1{
+	width: 28.57%;
+	height: 50px;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+	color: blue;
+	background-color: rgba(0,81,225,0.50);
+	overflow: hidden;
+}
+.header-21{
+	width: 21.43%;
+}
+.header-22{
+	width: 35.71%;
+}
+.header-23{
+	width: 14.29%;
+}
+
+.User{
+	width: 100%;
+	height: 75px;
+	text-align: center;
+	vertical-align: middle;
+	background : linear-gradient(to bottom, darkslateblue, violet, darkslateblue);
+    background : -moz-linear-gradient(bottom, darkslateblue, violet, darkslateblue);
+    background : -webkit-linear-gradient(bottom, darkslateblue, violet, darkslateblue);
+    background : -o-linear-gradient(bottom, darkslateblue, violet, darkslateblue);
+}
+.User h1{
+	width:100%;
+	color: dodgerblue;
+	font-size: 24px;
+	font-family: 'Arizonia';
+	-webkit-box-reflect: below -3px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(10%, transparent), to(rgba(255, 255, 255, 0.3)));
+}
+.User h1 span{
+	font-family: 'Arizonia';
+	font-size: 30px;
+	color: orange;
+}
+.User p{
+	padding-top: 15px;
+	font-size: 14px;
+	color: chartreuse;
+}
+table, th, td{
+	border: 1px solid gray;
+	border-collapse: collapse;
+}
+th{
+	background-color: rgba(0,81,225,0.50);
+	color: white;
+}
+td{
+	text-align: justify;
+	color: olivedrab;
+}
+.List-Family{
+	display: block;
+	position: absolute;
+	top: 75px;
+	width: 300px;
+	height: 925px;
+	padding-top: 5px;
+	max-height: 925px;
+	overflow: scroll;
+}
+.submenu{
+	position: relative;
+	width: 100%;
+}
+.List-Family a{
+	text-decoration: none;
+	margin-left: 5px;
+	font-weight: bold;
+	color: olive;
+	line-height: 25px;
+}
+.List-Family a span{
+	font-weight: 100;
+	font-size: 10px;
+	margin-right: 5px;
+}
+.List-Family div .children{
+	display: none;
+}
+.List-Family div .children li{
+	font-weight: normal;
+	list-style: none;
+	display: block;
+	margin-left: 15px;
+	
+	line-height: 25px;
+}
+.List-Family div .children li a{
+	display: block;
+	font-weight: 100;
+	color: olivedrab; 
+}
+.Filter-Label{
+	height: 25px;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	color: green;
+	background : linear-gradient(to bottom, palegoldenrod, orange, palegoldenrod);
+    background : -moz-linear-gradient(bottom, palegoldenrod, orange, palegoldenrod);
+    background : -webkit-linear-gradient(bottom, palegoldenrod, orange, palegoldenrod);
+    background : -o-linear-gradient(bottom, palegoldenrod, orange, palegoldenrod);
+}
+.Filter-Value{
+	width: 98%;
+	height: 24px;
+	font-weight: bold;
+	color: green;
+	margin-left: 1%;
+	padding: 2px 5px;
+}
+.Search-Value{
+	margin-left: 1%;
+	width: 98%;
+	color: green;
+}
+.btSearch{
+	width: 98%;
+	margin-left: 1%;
+	color: green;
+	text-align: center;
+	font-weight: bold;
+	background-color: antiquewhite;
+}
+.btSearch:hover{
+	color: red;
+	background-color: green;
+	text-shadow: 0 0 10px #ffff00, 0 0 60px #ffff00, 0 0 10px #ffff00;
+	transition: all 300ms;
+}
+.Download-Name{
+	height: 20px;
+	color: darkorange;
+	background : linear-gradient(to bottom, bisque, burlywood, bisque);
+    background : -moz-linear-gradient(bottom, bisque, burlywood, bisque);
+    background : -webkit-linear-gradient(bottom, bisque, burlywood, bisque);
+    background : -o-linear-gradient(bottom, bisque, burlywood, bisque);
+}
+tr td img{
+	display: block;
+	margin: 0 auto;
+	width: 150px;
+	height: 150px;
+}
+.Download-Cost{
+	text-align: right;
+	color: green;
+	font-weight: bold;
+	padding-right: 5px;
+}
+.Info-Label-Value{
+	display: flex;
+	flex-wrap: wrap;
+	padding-left: 5px;
+}
+
+.Info-Label-Value p{
+	padding-left: 5px;
+}
+.downloads-link{
+	background-color: antiquewhite;
+	text-align: center;
+}
+.downloads-link a{
+	text-decoration: none;
+	font-weight: bold;
+	color: green;
+}
+.download-link a:hover{
+	background: green;
+	color: red;
+	transition: all 300ms;
+}
+.Download-New{
+	display: block;
+	width: 30%;
+	position: relative;
+}
+.Download-New-1{
+	position: relative;
+	width: 100%;
+	margin: auto;
+}
+.Download-New-2{
+	position: relative;
+	width: 100%;
+	margin:auto;
+}
+.WhatNew{
+	position: absolute;
+	margin: 0px;
+	width: 100%;
+	font-size: 24px;
+	color: lawngreen;
+	text-align: center;
+	background : linear-gradient(to bottom, blue, orangered, blue);
+    background : -moz-linear-gradient(bottom, blue, orangered, blue);
+    background : -webkit-linear-gradient(bottom, blue, orangered, blue);
+    background : -o-linear-gradient(bottom, blue, orangered, blue);
+}
+.New-Icon-Image{
+	display: block;
+	margin: auto;
+	position: relative;
+}
+.New-Icon{
+	position: relative;
+	width: 60px;
+	height: 50px;
+	display: flex;
+	flex-wrap: nowrap;
+	margin: auto;
+	top: 25px;
+}
+.rotate-icon{
+	position: absolute;
+	margin: auto;
+	width: 50px;
+	height: 50px;
+}
+.icon-left{
+	left: 0px;
+	top: 10px;
+}
+.icon-right{
+	right: 0px;
+}
+.New-Background-Image{
+	position: relative;
+	margin: auto;
+}
+.New-Background-Image img{
+	position: relative;
+	margin: auto;
+	display: block;
+	width: 280px;
+	height: 280px;
+}
+.Download-Video{
+	display: block;
+	margin: auto;
+	width: 450px;
+	height: 253px;
+}
+
+.Download-Pages p{
+	text-align: center;
+	margin: auto;
+}
+
+.Textarea{
+	height: 95px;
+}
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-align: center;
+  font-size: 20px;
+  padding-left: 5px;
+  margin-top: -7px;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+}
+.rating > span:,
+.rating > span:hover ~ span {
+  color: transparent;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+   left: 10; 
+   color: gold;
+}
+@media (max-width: 1500px){
+	.List-Family{
+		width: 20%;
+		transition: all 300ms;
+	}
+	.Download-Video{
+		width: 100%;
+		transition: all 300ms;
+	}
+	.Form-Header{
+		font-size: 20px;
+	}
+}
+@media(max-width: 1280px){
+	.Downloads{
+		display: block;
+	}
+	.Main-Table{
+		width: 90%;
+		transition: all 300ms;
+	}
+	.Download-New{
+		width: 90%;
+		margin: auto;
+		transition: all 300ms;
+	}
+	.Textarea{
+		height: 150px;
+	}
+	.Button{
+		margin-bottom: 10px;
+	}
+	.List-Family{
+		width: 25.71%;
+		transition: all 300ms;
+	}
+	.New-Background-Image img{
+		width: 450px;
+		height: 450px;
+	}
+	.Download-Video{
+		height: 500px;
+	}
+	.icon-down-up{
+		right: 0px;
+	}
+}
+@media(max-width:800px){
+	.Main-Table{
+		width: 100%;
+	}
+	.Download-New{
+		width: 100%;
+	}
+	.List-Family{
+		width: 28.57%;
+		top: 85px;
+	}
+	.Download-Video{
+		height: 300px;
+	}
+	tr td img{
+		width: 100px;
+		height: 100px;
+		transition: all 300ms;
+	}
+}

@@ -1,0 +1,667 @@
+/* CSS Document */
+/*BODY*/
+
+.BIMTech-Body{
+	margin: auto;
+	margin-top: 70px;
+	position: relative;
+	display: block;
+}
+.BIMTech-Body-2{
+	margin-left: 100px;
+	transition: all 1000ms;
+}
+/*MENU*/
+.menu{
+	z-index: 100;
+	position: fixed;
+	top: 0px;
+}
+/*MENU TOP*/
+.menutop{
+	width: 100%;
+	height: 50px;
+	display: flex;
+	perspective: 200px;
+	position: fixed;
+	background: darkblue;
+}
+
+.menutop span{
+	font-size: 30px;
+	padding: 10px;
+	color: white;
+	transition: all 300ms;
+	cursor: pointer;
+	left: 5px;
+}
+
+.menutop span:hover{
+	background: rgba(0,0,0,0.3);
+	border-radius: 10px;
+}
+
+.menutop ul{
+	display: flex;
+	margin: auto;
+}
+
+.menutop li{
+	list-style: none;
+	padding: 15px 0px;
+}
+.menutop a{
+	text-decoration: none;
+	color: white;
+	padding: 15px 20px;
+}
+.menutop li:hover{
+	background: rgba(0,0,0,0.3);
+	color: dodgerblue;
+	cursor: pointer;
+	transition: all 300ms;
+}
+.menutop ul li ul li{
+	padding: 15px 0px;
+}
+.menutop ul li ul{
+	*display: none;
+	flex-direction: column;
+	position: absolute;
+	background: darkblue;
+	margin-top: 15px;
+	transform: rotateY(210deg) scale(0);
+	transition: all 300ms;
+	box-shadow: 1px 1px 10px 0px black;
+}
+
+.menutop ul li:hover > ul{
+	transform: rotateY(0deg) scale(1);
+	transition: all 300ms;
+}
+
+.menutop ul li ul:before{
+	content: '';
+	width: 0;
+	height: 0;
+	border-right:10px solid transparent;
+	border-left: 10px solid transparent;
+	border-bottom: 8px solid darkblue;
+	position: absolute;
+	margin-top: -8px;
+	margin-left: 20px;
+}
+
+/*MENU LEFT*/
+.menuleft{
+	width: 100px;
+	height: 100vh;
+	background: darkblue;
+	transition: all 300ms;
+	top: 50px;
+	margin-left: -100px;
+}
+.menuleft2{
+	margin-left: 0px;
+	transition: all 300ms;
+}
+
+.menuleft li{
+	list-style: none;
+	text-align: center;
+	padding: 8px;
+	color: white;
+	transition: all 300ms;
+	cursor: pointer;
+}
+
+.menuleft li:hover{
+	transform: translateY(10px);
+	background: rgba(0,0,0,0.5);
+}
+
+.menuleft li span{
+	font-size: 40px;
+}
+
+.menuleft li h4{
+	color: white;
+	font-size: 16;
+	padding: 3px;
+	text-align: center;
+	transform: translateY(20px) translateX(-100px);
+	transition: all 30ms;
+}
+.menuleft li h4:hover{
+	color: blue;
+}
+
+.icon1{
+	color: palegreen;
+}
+
+.icon2{
+	color: lime;
+}
+
+.icon3{
+	color: chartreuse;
+}
+
+.icon4{
+	color: greenyellow;
+}
+
+.icon5{
+	color: chartreuse;
+}
+
+.icon6{
+	color: yellow;
+}
+
+.icon7{
+	color:gold;
+}
+
+.icon8{
+	color:darkorange;
+}
+
+
+.menuleft:hover .menuleft-text1{
+	transform: translateX(0px);
+	transition: all 100ms;
+}
+
+.menuleft:hover .menuleft-text2{
+	transform: translateX(0px);
+	transition: all 200ms;
+}
+
+.menuleft:hover .menuleft-text3{
+	transform: translateX(0px);
+	transition: all 300ms;
+}
+
+.menuleft:hover .menuleft-text4{
+	transform: translateX(0px);
+	transition: all 400ms;
+}
+
+.menuleft:hover .menuleft-text5{
+	transform: translateX(0px);
+	transition: all 500ms;
+}
+
+.menuleft:hover .menuleft-text6{
+	transform: translateX(0px);
+	transition: all 600ms;
+}
+
+.menuleft:hover .menuleft-text7{
+	transform: translateX(0px);
+	transition: all 700ms;
+}
+
+.menuleft:hover .menuleft-text8{
+	transform: translateX(0px);
+	transition: all 800ms;
+}
+
+
+/*CREATE GROUP*/
+.BIMTech-Group-block{
+	margin: auto;
+	position: relative;
+	display:block;
+	clear: both;
+}
+
+.BIMTech-Group-flex{
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	clear: both;
+}
+.BIMTech-Group-flex-nowrap{
+	margin: auto;
+	display: flex;
+	flex-wrap: nowrap;
+	clear: both;
+}
+
+/*TITLE AND DETAILS*/
+.BIMTech-Title-Details{
+	position: relative;
+	display: flex;
+	flex-wrap: nowrap;
+	margin: 20px 10px 0px 10px;
+}
+.BIMTech-Title{
+	text-align: left;
+	color: blue;
+	font-size: 30px;
+	padding: 20px;
+	background-color: rgba(0,81,225,0.50);
+}
+.BIMTech-Details{
+	color: forestgreen;
+	font-size: 20px;
+	padding: 0px 10px 0px 10px;
+	text-align: justify;
+	margin: auto;
+	font-weight: 800;
+}
+/*LINK BUTTON*/
+
+.details{
+	width: 120px;
+	height: 40px;
+	line-height: 40px;
+	position: absolute;
+	top: 260px;
+	left: 380px;
+	background-color: rgba(0,255,203,0.30);
+	text-decoration: none;
+	color: blue;
+	font-weight: bold;
+	text-align:center;
+}
+.details:hover{
+	background-color: rgba(0,81,225,0.30);
+	color: red;
+	text-shadow: 0 0 10px #ffff00, 0 0 60px #ffff00, 0 0 10px #ffff00;
+	transition: all 300ms;
+}
+.reviews{
+	width: 120px;
+	height: 40px;
+	line-height: 40px;
+	position: absolute;
+	top: 260px;
+	background-color: rgba(0,255,203,0.30);
+	text-decoration: none;
+	color: blue;
+	font-weight: bold;
+	text-align:center;
+}
+.reviews:hover{
+	background-color: rgba(0,81,225,0.30);
+	color: red;
+	text-shadow: 0 1px 0 #ffff00,
+               0 2px 0 #ffff00,
+               0 3px 0 #ffff00,
+               0 4px 0 #ffff00,
+               0 5px 0 #ffff00,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+	transition: all 300ms;
+}
+.link{
+	text-decoration: none;
+}
+.BIMTech-Group-block h3{
+	padding-top: 20px;
+	color: green;
+	font-size: 26px;
+}
+.BIMTech-Follow-flex{
+	position: relative;
+	display: flex;
+	flex-wrap: nowrap;
+}
+.BIMTech-icon{
+	width: 50px;
+	height: 50px;
+	padding: 5px;
+	position: relative;
+}
+/*BUTTON*/
+.Form-Header{
+	font-size: 24px;
+	color: blue;
+	font-weight: bold;
+	background-color: orange;
+	margin: auto;
+	margin-top: 0px;
+	line-height: 40px;
+	text-align: center;	
+	vertical-align: middle;
+}
+.Form-Header:hover{
+	background: green;
+	color: red;
+	text-shadow: 0 0 10px #ffff00, 0 0 60px #ffff00, 0 0 10px #ffff00;
+	transition: all 300ms;
+}
+.Design-Form{
+	margin: auto;
+	position: relative;
+	margin-top: 0px;
+	width: 100%;
+}
+.Button{
+	margin: auto;
+	margin-top:-20px;
+	position: relative;
+	display: flex;
+	padding: 5px 10px;
+	font-weight: bold;
+	color: blue;
+}
+.Reset{
+	position: absolute;
+	left: 0px;
+}
+.Reset:hover{
+	background: blue;
+	color: red;
+	text-shadow: 0 0 10px #ffff00, 0 0 60px #ffff00, 0 0 10px #ffff00;
+	transition: all 300ms;
+}
+.Submit{
+	position: absolute;
+	right: 0px;
+}
+.Submit:hover{
+	background: green;
+	color: red;
+	text-shadow: 0 0 10px #ffff00, 0 0 60px #ffff00, 0 0 10px #ffff00;
+	transition: all 300ms;
+}
+
+form div{
+	position: relative;
+	top: 5px;
+}
+form div label{
+	position: relative;
+	top: 5px;
+	font-size: 16px;
+	font-weight: bold;
+	color: blue;
+}
+form div label span{
+	color: red;
+}
+textarea{
+	position: relative;
+	width: 100%;
+	margin-top: 10px;
+	font-size: 16px;
+	color: green;
+	height: 190px;
+}
+
+/*NEWS*/
+.news-content-element{
+	position: relative;
+	margin: auto;
+	margin-top: 20px;
+}
+
+.news-content-img{
+	width: 500px;
+	height: 300px;
+	position: relative;
+	overflow: hidden;
+}
+
+.news-content-img img{
+	width: 100%;
+	transition: all 300ms;
+}
+
+.news-content-1{
+	width: 1000px;
+	height: 1000px;
+	position: absolute;
+	top:0;
+	background: rgba(0,100,255,0.3);
+	transform: rotate(-30deg);
+	margin-left: -750px;
+	transition: all 300ms;
+}
+.news-content-2{
+	width: 1000px;
+	height: 1000px;
+	position: absolute;
+	top:0;
+	background: rgba(0,100,255,0.3);
+	transform: rotate(-30deg);
+	margin-left: -800px;
+	transition: all 500ms;
+}
+.news-content-3{
+	width: 1000px;
+	height: 1000px;
+	position: absolute;
+	top:0;
+	background: rgba(0,100,255,0.3);
+	transform: rotate(30deg);
+	margin-left: -800px;
+	margin-top: -600px;
+	transition: all 900ms;
+	box-shadow: 0px 1px 20px -5px black;
+}
+.news-content-4{
+	width: 1000px;
+	height: 1000px;
+	position: absolute;
+	top:0;
+	background: rgba(0,100,255,0.3);
+	transform: rotate(30deg);
+	margin-left: -850px;
+	margin-top: -600px;
+	transition: all 700ms;
+}
+
+.news-content-img:hover .news-content-1{
+	width: 250%;
+	transition: all 300ms;
+}
+.news-content-img:hover .news-content-2{
+	width: 250%;
+	transition: all 500ms;
+}
+.news-content-img:hover .news-content-3{
+	width: 250%;
+	transition: all 900ms;
+}
+.news-content-img:hover .news-content-4{
+	width: 250%;
+	transition: all 700ms;
+}
+
+.news-content-img:hover img{
+	transform: scale(1.1);
+	transition: all 300ms;
+	opacity: 0.8;
+}
+
+.news-content-txt{
+	position: absolute;
+	top: 0;
+	width: 400px;
+	padding: 20px;
+	z-index: 10;
+	color: white;
+	text-align: left;
+	margin-top: 45px;
+}
+.news-content-txt h3{
+	font-size: 30px;
+	opacity: 0;
+	transform: scale(0.2);
+	transition: all 300ms;
+}
+.news-content-txt p{
+	font-size: 20px;
+	margin-top: 10px;
+	opacity: 0;
+	transform: scale(1.5);
+	transition: all 300ms;
+}
+
+.news-content-img:hover h3{
+	opacity: 1;
+	transition: all 300ms;
+	transform: scale(1);
+}
+
+.news-content-img:hover p{
+	opacity: 1;
+	transform: scale(1);
+	transition: all 300ms;
+}
+
+
+/*FOOTER*/
+.BIMTech-Footer{
+	background-color: antiquewhite;
+	display: block;
+}
+.BIMTech-Footer-flex{
+	max-width: 1260px;
+	margin: auto;
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+}
+.BIMTech-Footer-Group{
+	width: 400px;
+	margin: 0px auto;
+}
+.BIMTech-Logo{
+	margin-top: 20px;
+	height: 40px;
+	position: relative;
+	display: flex;
+	flex-wrap: nowrap;
+}
+.BIMTech-Logo img{
+	height: 40px;
+}
+.BIMTech-Logo h1{
+	font-size: 24px;
+	color: orangered;
+	padding: 10px;
+}
+.BIMTech-Data{
+	color: cornflowerblue;
+	text-align: justify;
+}
+.BIMTech-Data p{
+	padding: 0px 20px;
+	font-size: 20px;
+}
+.BIMTech-Icon-Info{
+	margin-top: 20px;
+	display: flex;
+	flex-wrap: nowrap;
+	color: cornflowerblue;
+}
+.BIMTech-Icon-Info img{
+	width: 20px;
+	height: 20px;
+}
+.BIMTech-Icon-Info h1{
+	font-size: 20px;
+	padding: 0px 20px;
+}
+.BIMTech-New-Info{
+	margin-top: 20px;
+}
+.BIMTech-New-Info img{
+	width: 100px;
+	height: 60px;
+}
+.BIMTech-New-Info a{
+	display: flex;
+	flex-wrap: nowrap;
+}
+.BIMTech-New-Info a p{
+	width: 300px;
+	font-size: 20px;
+	padding: 0px 20px;
+	color: cornflowerblue;
+}
+.BIMTech-Footer-Informations{
+	width: 100%;
+	height: 100px;
+	background-color: darkblue;
+	clear: both;
+	margin-top: 20px;
+}
+.BIMTech-Footer-Informations p{
+	position: absolute;
+	margin: auto;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+	padding: 12px;
+	width: 100%;
+	height: 100px;
+}
+
+/*LINK WEBSITE*/
+.BIMTech-Link-Facebook iframe{
+	position: relative;
+	display: block;
+	margin: 10px auto;
+	
+}
+
+/**/
+.Input{
+	position: relative;
+	width: 100%;
+	margin-top: 10px;
+	height: 30px;
+	font-size: 16px;
+	color: green;
+}
+.checkbox{
+	position: relative;
+	left: 0px;
+	width: 20px;
+}
+
+/*Icon Down Up*/
+.icon-down-up{
+	width: 8px;
+	height: 2px;
+	background: olive;
+	position: absolute;
+	top: 12px;
+	right: 5px;
+	transform: rotateZ(-45deg);
+	box-shadow: 0px 2px 5px rgba(0,0,0,.2);
+	transition: all 300ms;
+}
+.icon-down-up:before
+{
+	content: '';
+	position: absolute;
+	right: 3px;
+	top: -3px;
+	width: 8px;
+	height: 2px;
+	background: inherit;
+	box-shadow: 0px 2px 5px rgba(0,0,0,.2);
+	transform: rotateZ(-90deg);
+	transition: all 300ms;
+}
+.submenu.active .icon-down-up{
+	transform: rotateZ(45deg);
+}
+.submenu.active .icon-down-up:before{
+	transform: rotateZ(90deg);
+	top: 3px;
+}

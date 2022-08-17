@@ -1,0 +1,109 @@
+/* CSS Document */
+*{
+	margin: 0;
+	padding: 0;
+	font-family:Times New Roman;
+	box-sizing: border-box;
+}
+.education{
+	margin: auto;
+	max-width: 1350px;
+}
+
+.education-courses{
+	margin: auto;
+	width: 300px;
+	height: 300px;
+	position: relative;
+	margin-top: 20px;
+}
+.courses-avatar{
+	position: absolute;
+	height: 300px;
+	width: 300px;
+}
+.courses-basic{
+	font-size: 20px;
+	color: chartreuse;
+}
+.courses-advance{
+	font-size: 20px;
+	color: chartreuse;
+	text-align: center;
+}
+.courses-family{
+	font-size: 20px;
+	color: chartreuse;
+	text-align: right;
+}
+.courses-detail{
+	background: rgba(0,100,255,0.3);
+	width: 300px;
+	height: 120px;
+	position: absolute;
+	top: 180px;
+	left: 0px;
+	padding: 10px 10px;
+	font-size: 20px;
+	color: chartreuse;
+}
+.courses-detail a{
+	position: absolute;
+	top: 80px;
+	left: 180px;
+}
+.course-detail a:hover{
+	background-color: rgba(0,100,255,0.5);
+	color:darkorange;
+}
+.courses-introduction{
+	margin: auto;
+	width: 300px;
+	position: relative;
+	margin-top: 20px;
+	text-align: justify;
+	font-size: 24px;
+	color: blue;
+}
+.education-videocomments{
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+}
+.education-video{
+	position: relative;
+	display: flex;
+	margin: 20px auto;
+	width: 533px;
+	height: 300px;
+}
+.education-comments{
+	height: 300px;
+	width: 533px;
+	position: relative;
+	margin: 20px auto;
+	background-color: gainsboro;
+}
+.education-comments h1{
+	font-size: 20px;
+	color: blue;
+	text-align: justify;
+	padding: 10px;
+	background-color: rgba(0,100,255,0.5);
+}
+.education-button{
+	font-size: 24px;
+	color: blue;
+	text-align: center;
+	width: 100px;
+	height: 40px;
+	position: absolute;
+	top: 260px;
+	left: 433px;
+}
+
+@media (max-width: 1220px) {
+	.courses-introduction{
+		width: 80%;
+	}
+}

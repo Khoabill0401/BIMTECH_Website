@@ -1,0 +1,132 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.main{
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.menuleft{
+	width: 100px;
+	background: black;
+	transition: all 300ms;
+	padding: 10px;
+	z-index: 100;
+	float: left;
+}
+
+.menuleft2{
+	margin-left: translateX(-100px);
+}
+
+.menuleft li{
+	list-style: none;
+	text-align: center;
+	padding: 6px;
+	color: white;
+	transition: all 300ms;
+	cursor: pointer;
+}
+
+.menuleft li:hover{
+	transform: translateY(10px);
+	background: rgba(0,0,0,0.5);
+}
+
+.menuleft li span{
+	font-size: 40px;
+}
+
+.menuleft li h4{
+	text-align: center;
+	transform: translateY(5px) translateX(-100px);
+	transition: all 30ms;
+}
+
+.icon1{
+	color: coral;
+}
+
+.icon2{
+	color:cyan;
+}
+
+.icon3{
+	color: blueviolet;
+}
+
+.icon4{
+	color:brown;
+}
+
+.icon5{
+	color:cornflowerblue;
+}
+
+.icon6{
+	color:chartreuse;
+}
+
+.icon7{
+	color:darkorange;
+}
+
+.icon8{
+	color:gold;
+}
+
+.icon9{
+	color:honeydew;
+}
+
+.menuleft:hover .menuleft-text1{
+	transform: translateX(0px);
+	transition: all 100ms;
+}
+
+.menuleft:hover .menuleft-text2{
+	transform: translateX(0px);
+	transition: all 200ms;
+}
+
+.menuleft:hover .menuleft-text3{
+	transform: translateX(0px);
+	transition: all 300ms;
+}
+
+.menuleft:hover .menuleft-text4{
+	transform: translateX(0px);
+	transition: all 400ms;
+}
+
+.menuleft:hover .menuleft-text5{
+	transform: translateX(0px);
+	transition: all 500ms;
+}
+
+.menuleft:hover .menuleft-text6{
+	transform: translateX(0px);
+	transition: all 600ms;
+}
+
+.menuleft:hover .menuleft-text7{
+	transform: translateX(0px);
+	transition: all 700ms;
+}
+
+.menuleft:hover .menuleft-text8{
+	transform: translateX(0px);
+	transition: all 800ms;
+}
+
+.menuleft:hover .menuleft-text9{
+	transform: translateX(0px);
+	transition: all 900ms;
+}
+
+
+

@@ -1,0 +1,350 @@
+/* CSS Document */
+*{
+	margin: 0;
+	padding: 0;
+	font-family:Times New Roman;
+	box-sizing: border-box;
+}
+.introduction{
+	margin: auto;
+	margin-top: -20px;
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.introduction-page-1{
+	width: 100%;
+	height: 450px;
+	position: relative;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	overflow: hidden;
+}
+.img-background{
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	height: inherit;
+}
+.introduction-img-text{
+	position: relative;
+	width: 40%;
+}
+
+.introduction-avatar img{
+	position: absolute;
+	border-radius: 50%;
+	top: 10px;
+	left: 140px;
+	height: 80%;
+}
+
+.introduction-name{
+	width: 630px;
+	position: relative;
+	top: 375px;
+	text-align: center;
+}
+
+.introduction-name h1{
+	font-size: 24px;
+	color: white;
+}
+.introduction-name h2{
+	font-size: 20px;
+	color: white;
+}
+
+.introduction-label-personal{
+	height: 450px;
+	position: relative;
+	padding-left: 100px;
+	display: table;
+	line-height: 50px;
+	font-size: 20px;
+	color: white;
+}
+.introduction-label{
+	display: table-cell;
+	vertical-align: middle;
+}
+.introduction-personal{
+	position: relative;
+	left: 50px;
+	width: 80%;
+	display: table-cell;
+	vertical-align: middle;
+}
+.introduction-video{
+	position: relative;
+	display: flex;
+	margin: auto;
+	width: 533px;
+	height: 300px;
+}
+/*Page 2*/
+.introduction-page-2{
+	width: 90%;
+	position: relative;
+	margin: auto;
+	display: block;
+}
+.introduction-experiences{
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+}
+.introduction-text{
+	position: relative;
+	padding-left: 50px;
+	width: 50%;
+}
+.introduction-text-full{
+	position: relative;
+	padding-left: 50px;
+	width: 100%;
+}
+.introduction-image{
+	height: 400px;
+	margin: auto;
+	padding-top: 10px;
+}
+.introduction-icon-label{
+	position: relative;
+	top: 10px;
+	display: flex;
+}
+.introduction-icon-label img{
+	width: 50px;
+	height: 50px;
+}
+.introduction-icon-label h1{
+	font-size: 30px;
+	color: blue;
+	position: relative;
+	left: 10px;
+}
+.introduction-text h1{
+	padding: 20px 0px 0px 0px;
+	line-height: 30px;
+	font-size: 28px;
+	color: blue;
+}
+.introduction-p{
+	padding: 20px 10px 0px 0px;
+	line-height: 40px;
+	font-size: 26px;
+	color: dodgerblue;
+	text-align: justify;
+}
+.introduction-education{
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+}
+.introduction-table{
+	margin: auto;
+	margin-top: 20px;
+	width: 80%;
+}
+table, th, td{
+	border: 1px solid gray;
+	border-collapse: collapse;
+}
+th, td{
+	padding: 5px 10px;
+	font-size: 26px;
+}
+th{
+	background-color:darkgreen;
+	color: white;
+}
+td{
+	text-align: justify;
+	color: darkblue;
+}
+tr:nth-child(even){
+	background-color: #F0F0F0;
+}
+tr:hover{
+	background-color:#ddd;
+}
+
+/*Page 3*/
+.introduction-linguistics{
+	position: relative;
+	max-width: 80%;
+}
+.img-linguistics{
+	width: 100%;
+	position: relative;
+	margin: auto;
+}
+.introduction-linguistics li{
+	position: relative;
+	left: 50px;
+	padding: 10px;
+	line-height: 30px;
+	font-size: 26px;
+	color: dodgerblue;
+	text-align: justify;
+}
+.introduction-motto{
+	font-size: 24px;
+	color: orangered;
+	text-align: center;
+	padding: 30px;
+}
+@media (max-width: 1600px) {
+	.introduction-p{
+		line-height: 30px;
+		font-size: 20px;
+		transition: all 300ms;
+	}
+	.img-linguistics{
+		padding-left: 125px;
+		margin: auto;
+		transition: all 300ms;
+	}
+	th, td{
+		font-size: 20px;
+		transition: all 300ms;
+	}
+}
+
+@media (max-width: 1366px) {
+	.img-linguistics{
+		padding-left: 100px;
+		margin: auto;
+		transition: all 300ms;
+	}
+}
+@media (max-width: 1280px) {
+	.introduction-p{
+		line-height: 25px;
+		font-size: 16px;
+		transition: all 300ms;
+	}
+	.img-linguistics{
+		padding-left: 50px;
+		margin: auto;
+		transition: all 300ms;
+	}
+	.introduction-image{
+		height: 300px;
+		margin: auto;
+		transition: all 300ms;
+	}
+	.introduction-video{
+		width: 400px;
+		height: 225px;
+		transition: all 300ms;
+	}
+
+	.introduction-linguistics li{
+		font-size: 20px;
+		transition: all 300ms;
+	}
+	th, td{
+		padding: 5px 5px;
+		font-size: 16px;
+		transition: all 300ms;
+	}
+	.introduction-page-1{
+		height: 400px;
+		transition: all 300ms;
+	}
+	.introduction-avatar img{
+		top: 8px;
+		left: 130px;
+		height: 80%;
+		transition: all 300ms;
+	}
+	.introduction-name{
+		width: 580px;
+		position: relative;
+		top: 330px;
+		transition: all 300ms;
+	}
+	.introduction-name h1{
+		font-size: 22px;
+		transition: all 300ms;
+	}
+	.introduction-name h2{
+		font-size: 18px;
+		transition: all 300ms;
+	}
+	.introduction-label-personal{
+		height: 400px;
+		line-height: 40px;
+		font-size: 18px;
+		transition: all 300ms;
+	}
+}
+@media (max-width: 1152px) {
+	.introduction-label-personal{
+		position: relative;
+		padding-left: 50px;
+		transition: all 300ms;
+	}
+	.introduction-personal{
+		position: relative;
+		left: 20px;
+		width: 250px;
+		transition: all 300ms;
+	}
+	.introduction-img-text{
+		position: relative;
+		width: 40%;
+		transition: all 300ms;
+	}
+	.introduction-text{
+		position: relative;
+		padding-left: 50px;
+		width: 100%;
+		transition: all 300ms;
+	}
+}
+@media (max-width: 800px) {
+	.introduction-page-1{
+		height: 300px;
+		transition: all 300ms;
+	}
+	.introduction-label-personal{
+		width: 0px;
+		transition: all 300ms;
+	}
+	.introduction-avatar img{
+		top: 5px;
+		left: 130px;
+		height: 80%;
+		transition: all 300ms;
+	}
+	.introduction-name{
+		width: 500px;
+		position: relative;
+		top: 240px;
+		transition: all 300ms;
+	}
+	.introduction-name h1{
+		font-size: 20px;
+		transition: all 300ms;
+	}
+	.introduction-name h2{
+		font-size: 16px;
+		transition: all 300ms;
+	}
+	.introduction-label-personal{
+		height: 300px;
+		line-height: 30px;
+		font-size: 16px;
+		transition: all 300ms;
+	}
+	th, td{
+		padding: 5px 5px;
+		font-size: 14px;
+		transition: all 300ms;
+	}
+}

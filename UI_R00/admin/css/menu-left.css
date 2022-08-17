@@ -1,0 +1,101 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+	padding: 0;
+	margin: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.Menu-Left{
+	background: darkblue;
+	z-index: 900;
+	width: 250px;
+	height: 100vh;
+	position: absolute;
+	top: 0px;
+	margin-left: 0px;
+}
+.Control{
+	list-style: none;
+	position: relative;
+	top: 50px;
+}
+
+.Menu-Left ul li{
+	display: block;
+	border-bottom: 1px solid rgba(255,255,255,.3);
+	position: relative;
+}
+.Menu-Left ul li:hover{
+	background-color: rgba(0,0,0,0.3);
+}
+.Menu-Left ul li a{
+	color: white;
+	display: block;
+	text-decoration: none;
+	padding: 10px;
+	height: 40px;
+	vertical-align: middle;
+}
+.Menu-Left ul li a span{
+	margin-right: 10px;
+}
+.Menu-Left ul li:hover .children{
+	display: none;
+}
+.Menu-Left ul li .children{
+	display: none;
+	background: darkblue;
+	position: relative;
+	width: 100%;
+	z-index: 1000;
+}
+.Menu-Left ul li .children li{
+	display: block;
+	overflow: hidden;
+	border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+.Menu-Left ul li .children li a{
+	display: block;
+	margin-left: 20px;
+}
+
+.Menu-Left ul li .children li a span{
+	float: right;
+	position: relative;
+	margin-right: 0;
+}
+/*Icon Down Up*/
+.submenu a div{
+	background: white;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+
+@media(max-width:768px){
+	.Menu-Left{
+		margin-left: -250px;
+		transition: all 300ms;
+	}
+	.Menu-Left-2{
+		margin-left: 0px;
+		transition: all 300ms;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

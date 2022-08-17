@@ -1,0 +1,94 @@
+/* CSS Document */
+*{
+	margin: 0;
+	padding: 0;
+	font-family:Times New Roman;
+	box-sizing: border-box;
+}
+.aboutus{
+	margin: auto;
+	max-width: 1560px;
+}
+@media (max-width: 1600px) {
+	.aboutus{
+	max-width: 1040px;
+	}
+}
+.aboutus-people{
+	margin: auto;
+	width: 500px;
+	height: 300px;
+	position: relative;
+	margin-top: 20px;
+}
+.aboutus-avatar{
+	position: absolute;
+	height: 300px;
+	width: 300px;
+}
+.aboutus-detail{
+	width: 120px;
+	height: 250px;
+	position: absolute;
+	top: 0px;
+	left: 300px;
+	padding: 10px 10px;
+	font-size: 20px;
+	color: darkblue;
+}
+.aboutus-detail a{
+	position: absolute;
+	top: 260px;
+	left: 0px;
+}
+
+.aboutus-name h1{
+	transform: rotate(-90deg);
+	color:blue;
+	position: absolute;
+	top: 110px;
+	left: 310px;
+	width: 300px;
+	height: 80px;
+	padding: 10px;
+	font-size: 24px;
+	line-height: 30px;
+}
+/*COLOR*/
+.thayluan-background{
+	background-color: cornsilk;
+}
+.thayluan-namepanelcolor{
+	background-color: rgba(177,155,40,0.58);
+}
+.thayduy-background{
+	background-color: aliceblue;
+}
+.thayduy-namepanelcolor{
+	background-color: rgba(24,174,181,0.58);
+}
+.phuoc-background{
+	background-color: darkkhaki;
+}
+.phuoc-namepanelcolor{
+	background-color: rgba(89,225,15,0.58);
+}
+.nguyen-background{
+	background-color: gold;
+}
+.nguyen-namepanelcolor{
+	background-color: rgba(189,143,77,0.58);
+}
+.luon-background{
+	background-color: darkseagreen;
+}
+.luon-namepanelcolor{
+	background-color: rgba(97,115,30,0.58);
+}
+.phuong-background{
+	background-color: cornsilk;
+}
+.phuong-namepanelcolor{
+	background-color: rgba(197,115,30,0.58);
+}
+

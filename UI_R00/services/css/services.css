@@ -1,0 +1,17 @@
+/* CSS Document */
+*{
+	margin: 0;
+	padding: 0;
+	font-family:Times New Roman;
+	box-sizing: border-box;
+}
+.services{
+	max-width: 1560px;
+	margin: auto;
+}
+@media (max-width: 1600px) {
+	.services{
+	max-width: 1040px;
+	}
+}
+

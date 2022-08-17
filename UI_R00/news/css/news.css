@@ -1,0 +1,136 @@
+.news-content-all{
+	width: 100%;
+	margin-left: 0px;
+	display: flex;
+	flex-wrap: wrap;
+	float: left;
+	position: absolute;
+	margin-top: 500px;
+}
+
+
+.news-content-img{
+	width: 500px;
+	height: 300px;
+	margin: auto;
+	margin-top: 30px;
+	position: relative;
+	overflow: hidden;
+}
+
+.news-content-img img{
+	width: 100%;
+	transition: all 300ms;
+}
+
+.news-content-1{
+	width: 1000px;
+	height: 1000px;
+	position: absolute;
+	top:0;
+	background: rgba(0,100,255,0.3);
+	transform: rotate(-30deg);
+	margin-left: -750px;
+	transition: all 300ms;
+}
+.news-content-2{
+	width: 1000px;
+	height: 1000px;
+	position: absolute;
+	top:0;
+	background: rgba(0,100,255,0.3);
+	transform: rotate(-30deg);
+	margin-left: -800px;
+	transition: all 500ms;
+}
+.news-content-3{
+	width: 1000px;
+	height: 1000px;
+	position: absolute;
+	top:0;
+	background: rgba(0,100,255,0.3);
+	transform: rotate(30deg);
+	margin-left: -800px;
+	margin-top: -600px;
+	transition: all 900ms;
+	webkit-box-shadow:0px 1px 20px -5px black;
+	box-shadow: 0px 1px 20px -5px black;
+}
+.news-content-4{
+	width: 1000px;
+	height: 1000px;
+	position: absolute;
+	top:0;
+	background: rgba(0,100,255,0.3);
+	transform: rotate(30deg);
+	margin-left: -850px;
+	margin-top: -600px;
+	transition: all 700ms;
+}
+
+.news-content-img:hover .news-content-1{
+	width: 250%;
+	transition: all 300ms;
+}
+.news-content-img:hover .news-content-2{
+	width: 250%;
+	transition: all 500ms;
+}
+.news-content-img:hover .news-content-3{
+	width: 250%;
+	transition: all 900ms;
+}
+.news-content-img:hover .news-content-4{
+	width: 250%;
+	transition: all 700ms;
+}
+
+.news-content-img:hover img{
+	transform: scale(1.1);
+	transition: all 300ms;
+	opacity: 0.8;
+}
+
+.news-content-txt{
+	position: absolute;
+	top: 0;
+	width: 400px;
+	padding: 10px;
+	z-index: 10;
+	color: white;
+	text-align: left;
+	margin-top: 70px;
+}
+.news-content-txt h1{
+	font-family: "Bodoni MT Poster Compressed";
+	font-size: 30px;
+	opacity: 0;
+	transform: scale(0.2);
+	transition: all 300ms;
+}
+.news-content-txt p{
+	font-family: "Bodoni MT Poster Compressed";
+	font-size: 20px;
+	margin-top: 10px;
+	opacity: 0;
+	transform: scale(1.5);
+	transition: all 300ms;
+}
+
+.news-content-img:hover h1{
+	opacity: 1;
+	transition: all 300ms;
+	transform: scale(1);
+}
+
+.news-content-img:hover p{
+	opacity: 1;
+	transform: scale(1);
+	transition: all 300ms;
+}
+
+
+
+
+
+

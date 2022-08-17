@@ -1,0 +1,174 @@
+/* CSS Document */
+*{
+	margin: 0;
+	padding: 0;
+	font-family:Times New Roman;
+	box-sizing: border-box;
+	color: cornflowerblue;
+}
+.contact{
+	max-width: 1260px;
+	margin: auto;
+}
+.contact-group
+{
+	position: relative;
+	margin: 0px auto;
+	max-width: 400px;
+	color: cornflowerblue;
+	text-align: justify;
+}
+.contact-group h1 a{
+	text-decoration: none;
+	color: blue;
+	text-align: justify;
+	font-size: 26px;
+}
+.contact-group p{
+	padding: 20px 10px 10px 0px;
+}
+.contact-group p a{
+	text-decoration: none;
+	padding: 20px 10px 10px 0px;
+	font-size: 20px;
+	line-height: 30px;
+}
+.contact-group-2{
+	margin: 20px auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+.CreateAccount{
+	width: 500px;
+	margin: auto;
+}
+.Title h1{
+	font-size: 30px;
+	color: blue;
+	padding:20px 5px 5px 0px;
+}
+.Title a{
+	text-align: justify;
+	text-decoration: none;
+	font-size: 20px;
+	padding: 10px 5px 5px 0px;
+	line-height: 40px;
+}
+h1 span{
+	color: blue;
+	font-size: 72px;
+}
+label{
+	color: darkblue;
+	position: relative;
+	top: 5px;
+}
+label span{
+	color: red;
+}
+.BIMTech-Group-flex-nowrap p{
+	color: green;
+	padding: 15px 0px 0px 10px;
+}
+.BIMTech-Group-flex-nowrap p a{
+	color: blue;
+}
+.BIMTech-Group-flex-nowrap p a:hover{
+	color: red;
+	text-decoration: underline;
+	transition: all 300ms;
+}
+.btCreate:hover{
+	background-color: orange;
+	color: orangered;
+	font-weight: 800;
+}
+.EndAccount{
+	margin-top: 10px;
+	color: green;
+	text-align: center;
+}
+.EndAccount a{
+	color: orange;
+}
+.EndAccount a:hover{
+	color: orangered;
+	text-decoration: underline;
+}
+/*REGISTRATION FORM*/
+.firstname{
+	width: 60%;
+}
+.lastname{
+	width: 38%;
+	margin-left: 2%;
+}
+.username{
+	width: 49%;
+}
+.nationality{
+	width: 49%;
+	margin-left: 2%;
+}
+.birthday{
+	width: 38%;
+}
+.job{
+	width: 60%;
+	margin-left: 2%;
+}
+.advance{
+	display: flex;
+	flex-wrap: nowrap;
+	margin-top: 10px;
+}
+.useravatar{
+	width: 24%;
+	height: 180px;
+	border: 1px solid lightgray;
+}
+.advance-info{
+	width: 74%;
+	margin-left: 2%;
+	display: flex;
+	flex-wrap: wrap;
+}
+.branch{
+	width: 100%;
+}
+.file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.file-input::before {
+  content: 'Select Avatar';
+  display: inline-block;
+  background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+}
+.file-input:hover::before {
+  	border-color: green;
+	color: orange;
+}
+.file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+/*NOTIFICATION*/
+.Notification{
+	margin: 0px auto;
+	width: 500px;
+}
+
+
+
+
+

@@ -1,0 +1,260 @@
+/* CSS Document */
+*{
+	margin: 0;
+	padding: 0;
+	font-family:Times New Roman;
+	font-size: 14px;
+	box-sizing: border-box;
+	color: dodgerblue;
+}
+.design{
+	display: flex;
+	flex-wrap: wrap;
+	clear: both;
+}
+.design-left{
+	width: 60%;
+	position: relative;
+	display: block;
+	margin: auto;
+}
+
+.design-title{
+	width: 100%;
+	color: blue;
+	padding: 10px;
+	background-color: rgba(0,81,225,0.50);
+}
+.design-title h1{
+	font-size: 30px;
+	color: blue;
+}
+.design-title h2{
+	color: blue;
+	font-size: 24px;
+}
+.design-img{
+	display: block;
+	width: 100%;
+	margin: auto;
+}
+.design-img-small{
+	position: relative;
+	display: block;
+	width: 50%;
+	height: 37.5%;
+	margin: auto;
+}
+.design-left h3{
+	color: green;
+	font-size: 26px;
+	text-align: center;
+	font-weight: 100;
+}
+
+.Introduction-Text{
+	width: 450px;
+}
+.Introduction-Text p{
+	padding: 10px 10px 10px 0px;
+	font-size: 20px;
+	text-align: justify;
+	line-height: 30px;
+}
+.Introduction-Image{
+	position: relative;
+	display: block;
+	margin: 20px auto;
+	float: right;
+	height: 300px;
+}
+
+.BIMTech-Group-block h1{
+	text-align: justify;
+	font-size: 24px;
+	line-height: 40px;
+}
+.BIMTech-Group-block h1 span{
+	font-size: 24px;
+}
+.BIMTech-Group-block p{
+	padding: 10px 10px 10px 0px;
+	font-size: 20px;
+	text-align: justify;
+	line-height: 30px;
+}
+.Header-Image img{
+	width: 100%;
+}
+.FW-Image{
+	height: 300px;
+	margin: 10px auto;
+}
+
+/*RIGHT*/
+.Design-Right{
+	width: 30%;
+	position: relative;
+	margin: auto;
+	margin-top: 0px;
+	display: block;
+}
+
+/*BEAUTIFUL HOUSES*/
+
+.Design-Header{
+	width: 100%;
+	font-size: 26px;
+	color: blue;
+	font-weight: bold;
+	background-color: orange;
+	margin: auto;
+	margin-top: 20px;
+	line-height: 40px;
+	text-align: center;
+	vertical-align: middle;
+}
+.Design-Header:hover{
+	background: green;
+	color: red;
+	text-shadow: 0 0 10px #ffff00, 0 0 60px #ffff00, 0 0 10px #ffff00;
+	transition: all 300ms;
+}
+.right-beautiful-img{
+	display: flex;
+	flex-wrap: wrap;
+	clear: both;
+}
+.beautiful-img{
+	width: 50%;
+	margin: auto;
+}
+.beautiful-img img{
+	position: relative;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	margin: 0px auto;
+}
+/*RELATED ARTICALS*/
+.design-element{
+	margin: auto;
+	width: 300px;
+	height: 250px;
+	position: relative;
+	margin-top: 20px;
+	overflow: hidden;
+}
+.design-element:hover h2{
+	color: red;
+	text-shadow: 0 0 10px #ffff00, 0 0 60px #ffff00, 0 0 10px #ffff00;
+	opacity: 0;
+	transform: scale(2);
+	transition: all 300ms;
+}
+.design-element:hover h3{
+	color: red;
+	top: 30px;
+	opacity: 1;
+	transform: scale(1);
+	transition: all 300ms;
+}
+.design-element:hover img{
+	transform: scale(1.1);
+	opacity: 1;
+	transition: all 300ms;
+}
+.design-element:hover .related-reviews{
+	opacity: 1;
+	transform: scale(1);
+	transition: all 300ms;
+}
+.design-element:hover .related-details{
+	opacity: 1;
+	transform: scale(1);
+	transition: all 300ms;
+}
+.related-img{
+	width: 300px;
+	height: 180px;
+	overflow: hidden;
+}
+.related-img img{
+	opacity: 0.8;
+	width: 300px;
+	height: 180px;
+}
+.related-name{
+	position: absolute;
+	top: 180px;
+}
+.related-name h2{
+	color: blue;
+	font-size: 24px;
+	width: 300px;
+	height: 70px;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+.related-name h3{
+	position: absolute;
+	color: green;
+	font-size: 24px;
+	width: 300px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	background-color: rgba(0,81,225,0.30);
+	top: -180px;
+	opacity: 0;
+	transform: scale(0);
+}
+.related-reviews{
+	position: absolute;
+	height: 30px;
+	line-height: 30px;
+	width: 150px;
+	top: 0px;
+	left: 0px;
+	opacity: 0;
+	transform: scale(0);
+}
+.related-details{
+	position: absolute;
+	height: 30px;
+	line-height: 30px;
+	width: 150px;
+	top: 0px;
+	left: 150px;
+	opacity: 0;
+	transform: scale(0);
+}
+@media (max-width: 1440px){
+	.Introduction-Text{
+		width: 100%;
+		transition: all 300ms;
+	}
+}
+
+@media (max-width: 1024px){
+	.design{
+		display: block;
+		transition: all 300ms;
+	}
+	.design-left{
+		width: 90%;
+		transition: all 300ms;
+	}
+	.Design-Right{
+		width: 90%;
+		transition: all 300ms;
+	}
+	.Form-Header{
+		margin-top: 20px;	
+	}
+	.BIMTech-Group-flex{
+		width: 90%;
+		transition: all 300ms;
+	}
+}
