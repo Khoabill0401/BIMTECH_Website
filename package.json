@@ -2,14 +2,16 @@
   "name": "bimtech_website",
   "version": "1.0.0",
   "description": "First Demo for BIMTECH Website",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "build": "node bundle.js"
+    "build": "node ./Test_1/Samples/01/bundle.js"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^13.3.0",
-    "rollup": "^2.77.3",
-    "webpack-cli": "^4.10.0"
+    "rollup": "^2.78.0",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-merge": "^5.8.0"
   },
   "dependencies": {
     "camera-controls": "^1.36.1",
@@ -28,7 +30,6 @@
     "web-ifc": "^0.0.35",
     "web-ifc-three": "^0.0.119",
     "web-ifc-viewer": "^1.0.209",
-    "webpack": "^5.74.0",
     "yargs": "^17.5.1"
   }
 }
