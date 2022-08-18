@@ -16,6 +16,8 @@
         <meta name="application-name" content="BIMTECH.vn | Home" />
         <meta name="apple-mobile-web-app-title" content="BIMTECH.vn | Home" />
         <meta name="summary" content="BIMTECH Website Demo - Based on IFC standard" />
+        <!-- Loader -->
+        <link rel="stylesheet" href="./assets/css/preloader.css" >
         <!--For Dark/Light mode Toggle-->
         <link rel="stylesheet" href="./assets/css/darklightToggle.css" />  
         <!-- <script id="rendered-js" src="./assets/js/darklightToggle.js"></script> -->
@@ -24,26 +26,44 @@
         <link id='favicon' rel="shortcut icon" href="assets/images/favicon.png" type="image/x-png">
     </head>
 
-    <body translate="no" class="">
-        <!--For Dark/Light mode Toggle-->
-        <div class="toggle">
-            <input type="checkbox" id="toggle" />
-            <label for="toggle"></label>
+    <body class="no-scroll-preload">
+        <!-- loader -->
+        <div class="loader-container">
+            <div class="bimtech">
+                <p><img class="bimtech" src="./assets/images/Picture1.png" alt="BT"> </p>
+            </div>
+            <div class="atom">
+                <div class="atom"></div>
+                <div class="electron"></div>
+                <div class="electron-alpha"></div>
+                <div class="electron-omega"></div>
+            </div>
         </div>
-        <script>
-            const toggle = document.getElementById('toggle');
-            const body = document.body;
 
-            toggle.addEventListener('input', (e) => {
-            const isChecked = e.target.checked;
+
+        <body translate="no" class="">
+            <!--For Dark/Light mode Toggle-->
+            <div class="toggle">
+                <input type="checkbox" id="toggle" />
+                <label for="toggle"></label>
+            </div>
+            <script>
+                const toggle = document.getElementById('toggle');
+                const body = document.body;
     
-            if(isChecked) {
-            body.classList.add('dark-theme');
-            } else {
-            body.classList.remove('dark-theme');
-            }
-            });
-        </script>
+                toggle.addEventListener('input', (e) => {
+                const isChecked = e.target.checked;
         
-    </body>     
+                if(isChecked) {
+                body.classList.add('dark-theme');
+                } else {
+                body.classList.remove('dark-theme');
+                }
+                });
+            </script>
+            
+        </body>  
+    </body>
+
+       
 </html>
