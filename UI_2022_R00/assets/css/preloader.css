@@ -22,12 +22,12 @@
 .bimtech {
     height: var(--bimtech-height);
     width: var(--bimtech-width);
-    margin-top: calc(var(--bimtech-height) / -12);
+    /* margin-top: calc(var(--bimtech-height) / -12); */
     image-rendering: high-rendering;
     position: fixed;
     justify-content: initial;
     align-items: center;
-    animation: 8s bimtech infinite;
+    animation: 8s bimtech infinite ease-in-out;
 }
 @keyframes bimtech{
     0% { transform: scale(1); }
