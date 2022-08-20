@@ -2,7 +2,7 @@
 // Sweet Alert CDN through JS
 let script = document.createElement("script");
 script.type = 'text/javascript';
-script.src="https://unpkg.com/sweetalert/dist/sweetalert.min.js";
+// script.src="https://unpkg.com/sweetalert/dist/sweetalert.min.js";
 document.body.appendChild(script);
 
 // Header
@@ -21,9 +21,6 @@ let header = $(`
     <li class="nav-item">
       <input type="checkbox" id="dark_toggler" class="dark_toggler" aria-label="Toggle Light Mode" onclick="toggle_light_mode()" checked>
     </li>
-    <div class="bike">
-   
-    </div>
   </ul>
 </div>
 </nav>`);
@@ -73,9 +70,6 @@ let footer = $(`
           </div>
         </div>
     </div>
-
-
-    
 
     <div class="rounded-social-buttons tag">
     <a class="social-button twitter" href="#" target="_blank">
@@ -173,8 +167,6 @@ let footer = $(`
     </svg>
     </a>
 
-
-    
     </div>
     </div>
 </footer>

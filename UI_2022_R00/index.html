@@ -26,7 +26,7 @@
         <link rel="stylesheet" href="./assets/css/preloader.css" >
 
         <!--For Dark/Light mode Toggle-->
-        <link rel="stylesheet" href="./assets/css/darklightToggle.css" />
+        <!-- <link rel="stylesheet" href="./assets/css/darklightToggle.css" /> -->
 
         <!-- <script id="rendered-js" src="./assets/js/darklightToggle.js"></script> -->
         <!-- <script type="text/javascript" src="./assets/js/darklightToggle.js"></script> -->
@@ -211,29 +211,6 @@
                 </div>
             </div>
         </center>
-
-
-        <body translate="no" class="">
-            <!--For Dark/Light mode Toggle-->
-            <div class="toggle">
-                <input type="checkbox" id="toggle" />
-                <label for="toggle"></label>
-            </div>
-            <script>
-                const toggle = document.getElementById('toggle');
-                const body = document.body;
-
-                toggle.addEventListener('input', (e) => {
-                const isChecked = e.target.checked;
-
-                if(isChecked) {
-                body.classList.add('dark-theme');
-                } else {
-                body.classList.remove('dark-theme');
-                }
-                });
-            </script>
-        </body>
 
         <br><br><br>
 
