@@ -21,11 +21,11 @@ particlesJS("particles-js", {
         polygon: {
           nb_sides: 5,
         },
-        image: {
-          src: "https://cdn.freebiesupply.com/logos/large/2x/slack-logo-icon.png",
-          width: 100,
-          height: 100,
-        },
+        // image: {
+        //   src: "https://cdn.freebiesupply.com/logos/large/2x/slack-logo-icon.png",
+        //   width: 100,
+        //   height: 100,
+        // },
       },
   
       opacity: {
