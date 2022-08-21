@@ -154,6 +154,11 @@
     letter-spacing: -0.015em;
     outline: none;
   }
+
+  #search .dark_toggler:checked {
+
+  }
+
   #search::-webkit-input-placeholder {color: #FFFFFF;}
   #search::-moz-placeholder {color: #FFFFFF;}
   #search:-ms-input-placeholder {color: #FFFFFF;}
