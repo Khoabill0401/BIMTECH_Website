@@ -58,6 +58,7 @@ html[data-theme="light"] {
   
   .text .header {
     font-weight: bold;
+    
   }
   
   .text {
@@ -601,3 +602,13 @@ html[data-theme="light"] {
     }
   }
   
+  .parentDisable{
+    /* position: fixed; */
+    /* top: 0; */
+    /* left: 0; */
+    /* background: #000; */
+    opacity: 1;
+    /* z-index: 998; */
+    /* height: 100%; */
+    /* width: 100%;} */
+  }
