@@ -231,10 +231,20 @@ html[data-theme="light"] {
     font-family: Agustina;
     font-size: 30px;
     font-weight: bold;
+    /* background-color: #fff020; */
+  }
+
+  .navbar-brand::after{
+    content:'';
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    z-index: -1;
   }
   
   .navbar {
-    color: #000000;
+    color: #ffffff;
     background-color: #fff;
     z-index: 2;
     box-shadow: 0 2px 2px rgb(230, 230, 230);
@@ -265,7 +275,7 @@ html[data-theme="light"] {
     background-color: navy;
     border-radius: 50px;
     transition: all 0.9s;
-    background-color: #f7ca33;
+    background-color: #fcf047;
   }
   
   .dark_toggler:checked {
@@ -288,11 +298,11 @@ html[data-theme="light"] {
   
   html[light-mode="dark"] {
     background-color: #141516;
-    color: #f1e429;
+    color: #fcf047;
   }
   
   .dark-theme {
-    background-color: #2d1cca;
+    background-color: #2244db;
     transition: background-color .3s;
     box-shadow: 0 0 0;
   }
@@ -405,7 +415,7 @@ html[data-theme="light"] {
         height: 0.15em;
         bottom: 0;
         width: 0%;
-        background-color: #d0f10f;
+        background-color: #fcf047;
         transition: all ease-in-out 280ms;
     }
     
@@ -420,6 +430,7 @@ html[data-theme="light"] {
     a.nav-link {
         padding: 6px 21px !important;
         font-weight: bold;
+        display: inline-block;
     }
   
     /* Hide svg on laptop screens to prevent overlap between sidebar and navbar */
@@ -435,8 +446,12 @@ html[data-theme="light"] {
   html[light-mode="light"] .nav-link:hover{
     color: 	#020068 !important;
   }
+  html[light-mode="light"] .navbar-brand{
+    color: #000000;
+    background-color: #fcf047;
+  }
   html[light-mode="light"] .navbar-brand:hover{
-    color: #000000 !important;
+    color: #2e00fd;
   }
   
   @media (min-width: 992px) {
@@ -455,7 +470,7 @@ html[data-theme="light"] {
     align-items: center;
     cursor: pointer;
     transition: all .2s ease-in-out;
-    border-color: white;
+    border-color: rgb(17, 0, 255);
     border: none;
     outline: none;
     padding: 0;
