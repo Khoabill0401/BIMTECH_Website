@@ -35,6 +35,11 @@
         <link id='favicon' rel="shortcut icon" href="assets/images/favicon.png" type="image/x-png">
         <script defer src="./assets/js/dynamicTitle.js"></script>
 
+        <!-- Search Bar -->
+        <link rel="stylesheet" href="./assets/css/searchbar.css">
+        <script defer src="./assets/js/searchbar.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
         <!-- Import Font -->
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./assets/css/home.css">
@@ -73,17 +78,34 @@
         <nav class="navbar navbar-expand-lg fixed-top dark-theme" id="navbar">
             <a class="navbar-brand" href="index.html">SPACOR</a>
             
-            <div class="search">
-                <form action="#">
+            <div class="search-box container">
+                <div class="search-icon">
+                    <i class="fa fa-search search-icon"></i>
+                </div>
+                <form action="" class="search-form">
                     <input  type="text"
                             placeholder="What are you looking for?"
-                            name="search">
-                    <button>
-                        <i  class=""
-                            style="font-size: 10px;">
-                        </i>
-                    </button>
+                            autocomplete="off"
+                            id="search">
                 </form>
+                <svg    class="search-border" 
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" 
+                        xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" 
+                        x="0px" 
+                        y="0px" 
+                        viewBox="0 0 900 111" 
+                        style="enable-background:new 0 0 900 111;"
+                        xml:space="preserve">
+                    <path   class="border"
+                            d="M450,108.5h-280c-29.3,0-53-23.7-53-53v0c0-29.3,23.7-53,53-53h450"/>
+                    <path   class="border" 
+                            d="M450,108.5h280c29.3,0,53-23.7,53-53v0c0-29.3-23.7-53-53-53h-450"/>
+                </svg>   
+                <div class="go-icon">
+                    <i class="fa fa-arrow-right"></i>
+                </div>
             </div>
 
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
@@ -91,7 +113,7 @@
                     <!-- <li class="nav-item nav-item-hover"><a class="nav-link" href="index.html">Home</a></li> -->
                     <li class="nav-item nav-item-hover"><a class="nav-link" href="browse.html">Browse</a></li>
                     <li class="nav-item nav-item-hover"><a class="nav-link" href="collection.html">Collection</a></li>
-                    <li class="nav-item nav-item-hover"><a class="nav-link" href="designmyroom.html">Design my room</a></li>
+                    <li class="nav-item nav-item-hover"><a class="nav-link" href="designmine.html">Design mine</a></li>
                     <li class="nav-item nav-item-hover"><a class="nav-link" href="supplier.html">Supplier</a></li>
                     <li class="nav-item nav-item-hover"><a class="nav-link" href="contact.html">Contact</a></li>
                     <li class="nav-item">
