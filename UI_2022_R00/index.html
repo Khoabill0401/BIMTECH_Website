@@ -71,15 +71,29 @@
 
         <!--Dynamic Nav Bar-->
         <nav class="navbar navbar-expand-lg fixed-top dark-theme" id="navbar">
-            <a class="navbar-brand" href="index.html">BIMTECH</a>
+            <a class="navbar-brand" href="index.html">SPACOR</a>
             
+            <div class="search">
+                <form action="#">
+                    <input  type="text"
+                            placeholder="What are you looking for?"
+                            name="search">
+                    <button>
+                        <i  class=""
+                            style="font-size: 10px;">
+                        </i>
+                    </button>
+                </form>
+            </div>
+
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto" id = "navbar-content">
-                    <li class="nav-item nav-item-hover"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item nav-item-hover"><a class="nav-link" href="experience.html">Experience</a></li>
-                    <li class="nav-item nav-item-hover"><a class="nav-link" href="projects.html">Projects</a></li>
-                    <li class="nav-item nav-item-hover"><a class="nav-link" href="research.html">Research</a></li>
-                    <li class="nav-item nav-item-hover"><a class="nav-link" href="education.html">Education</a></li>
+                    <!-- <li class="nav-item nav-item-hover"><a class="nav-link" href="index.html">Home</a></li> -->
+                    <li class="nav-item nav-item-hover"><a class="nav-link" href="browse.html">Browse</a></li>
+                    <li class="nav-item nav-item-hover"><a class="nav-link" href="collection.html">Collection</a></li>
+                    <li class="nav-item nav-item-hover"><a class="nav-link" href="designmyroom.html">Design my room</a></li>
+                    <li class="nav-item nav-item-hover"><a class="nav-link" href="supplier.html">Supplier</a></li>
+                    <li class="nav-item nav-item-hover"><a class="nav-link" href="contact.html">Contact</a></li>
                     <li class="nav-item">
                         <input type="checkbox" id="dark_toggler" class="dark_toggler" aria-label="Toggle Light Mode" onclick="toggle_light_mode()" checked>
                     </li>
@@ -120,17 +134,18 @@
                 <div
                     class="text header"
                     style="
-                        margin-top: 5%;
+                        margin-top: 0%;
                         float: right;
                         left: 80%;
                         ">
-                    Marketplace for Interior Suppliers <br> 
-                    Experiences AR and 3D views at your own place. Designs your rooms and explore how things work. 
+                    <span class="top_heading top_heading_text">Marketplace for Interior Suppliers </span>
+                    <br> 
+                    <span>Experiences AR and 3D views at your own place. Designs your rooms and explore how things work. </span>
                 </div>
                 <div 
                     class="text header" 
                     style="
-                        margin-top: 10%;
+                        margin-top: 15%;
                         float: right;
                         left: 80%;
                         "><span></span>
@@ -139,7 +154,7 @@
                             <!-- <img src="./assets/svg/ifcjs-logo.svg" alt="" class="rounded-circle" height="200" width="200"> -->
                         </div>
                         <br/>
-                        <span style="display: inline;" id="particles-js">We are into <span class="animated-text center"
+                        <span  class="bot_heading" style="display: inline;" id="particles-js">We are into <span class="animated-text quote-left"
                             data-words="BIM Operation & Maintenance, As-built Projects, Shopdrawings, PointCloud"></span>
                         </span>
 
@@ -266,7 +281,7 @@
         </div>
         
         <!-- Dynamic footer section -->
-        <footer class="footer sticky-bottom"  style="background-color:#2b2a2a;">
+        <footer class="footer sticky-bottom"  style="background-color:#091b7e;">
             <div class="p-4">
                 <div class="container-fluid quote-container">
                     <div class="quotes"    style="text-align:center;">

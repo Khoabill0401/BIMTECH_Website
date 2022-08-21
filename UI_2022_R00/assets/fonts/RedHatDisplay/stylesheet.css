@@ -1,0 +1,96 @@
+@font-face {
+    font-family: 'Red Hat Display';
+    src: url('RedHatDisplay-BoldItalic.eot');
+    src: local('Red Hat Display Bold It'), local('RedHatDisplay-BoldItalic'),
+        url('RedHatDisplay-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('RedHatDisplay-BoldItalic.woff2') format('woff2'),
+        url('RedHatDisplay-BoldItalic.woff') format('woff'),
+        url('RedHatDisplay-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Red Hat Display';
+    src: url('RedHatDisplay-Italic.eot');
+    src: local('Red Hat Display It'), local('RedHatDisplay-Italic'),
+        url('RedHatDisplay-Italic.eot?#iefix') format('embedded-opentype'),
+        url('RedHatDisplay-Italic.woff2') format('woff2'),
+        url('RedHatDisplay-Italic.woff') format('woff'),
+        url('RedHatDisplay-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Red Hat Display';
+    src: url('RedHatDisplay-BlackItalic.eot');
+    src: local('Red Hat Display Black It'), local('RedHatDisplay-BlackItalic'),
+        url('RedHatDisplay-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('RedHatDisplay-BlackItalic.woff2') format('woff2'),
+        url('RedHatDisplay-BlackItalic.woff') format('woff'),
+        url('RedHatDisplay-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Red Hat Display';
+    src: url('RedHatDisplay-Regular.eot');
+    src: local('Red Hat Display'), local('RedHatDisplay-Regular'),
+        url('RedHatDisplay-Regular.eot?#iefix') format('embedded-opentype'),
+        url('RedHatDisplay-Regular.woff2') format('woff2'),
+        url('RedHatDisplay-Regular.woff') format('woff'),
+        url('RedHatDisplay-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Red Hat Display';
+    src: url('RedHatDisplay-Bold.eot');
+    src: local('Red Hat Display Bold'), local('RedHatDisplay-Bold'),
+        url('RedHatDisplay-Bold.eot?#iefix') format('embedded-opentype'),
+        url('RedHatDisplay-Bold.woff2') format('woff2'),
+        url('RedHatDisplay-Bold.woff') format('woff'),
+        url('RedHatDisplay-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Red Hat Display';
+    src: url('RedHatDisplay-Medium.eot');
+    src: local('Red Hat Display Medium'), local('RedHatDisplay-Medium'),
+        url('RedHatDisplay-Medium.eot?#iefix') format('embedded-opentype'),
+        url('RedHatDisplay-Medium.woff2') format('woff2'),
+        url('RedHatDisplay-Medium.woff') format('woff'),
+        url('RedHatDisplay-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Red Hat Display';
+    src: url('RedHatDisplay-MediumItalic.eot');
+    src: local('Red Hat Display Medium It'), local('RedHatDisplay-MediumItalic'),
+        url('RedHatDisplay-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('RedHatDisplay-MediumItalic.woff2') format('woff2'),
+        url('RedHatDisplay-MediumItalic.woff') format('woff'),
+        url('RedHatDisplay-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Red Hat Display';
+    src: url('RedHatDisplay-Black.eot');
+    src: local('Red Hat Display Black'), local('RedHatDisplay-Black'),
+        url('RedHatDisplay-Black.eot?#iefix') format('embedded-opentype'),
+        url('RedHatDisplay-Black.woff2') format('woff2'),
+        url('RedHatDisplay-Black.woff') format('woff'),
+        url('RedHatDisplay-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
