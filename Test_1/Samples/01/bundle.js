@@ -121432,7 +121432,9 @@ class IfcViewerAPI {
 }
 
 const container = document.getElementById('viewer-container');
-const viewer = new IfcViewerAPI({ container, backgroundColor: new Color(0xffffff) });
+container.style.opacity = "1";
+container.style.backgroundColor = 'transparent';
+const viewer = new IfcViewerAPI({ container, backgroundColor: 'transparent'});
 //viewer.grid.setGrid();
 //viewer.axes.setAxes();
 

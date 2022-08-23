@@ -1,0 +1,39 @@
+@media all and (min-width:991px){
+    .Marketplace_Nav{
+        background-color:#fcff5388;
+        margin-top: 79px;
+        height:30px;
+        overflow: auto;
+    }
+    .Marketplace_Nav > ul >li{
+        display:inline-block;
+        margin-left:20px;
+    }
+    .Marketplace_Nav > ul >li > a:hover{
+        text-decoration: none;
+        list-style: none;
+        color: rgb(2, 2, 92);
+    }
+    .Marketplace_Nav > ul >li >a{
+        font-size:15px;
+        font-weight:bold;
+        color:rgb(0, 0, 0);
+    }
+    #one{
+        margin-left:50px;
+    
+    }
+}
+@media all and (max-width:none){
+    .Marketplace_Nav{
+        display:none;
+    }
+}
+
+.Marketplace_ul{
+    color: white;
+    text-align: center;
+    margin: auto;
+    margin-left: 16%;
+    float: left;
+}

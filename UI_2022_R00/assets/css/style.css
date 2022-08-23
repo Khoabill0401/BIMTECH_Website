@@ -34,9 +34,9 @@ html[data-theme="light"] {
   
   html[data-theme="dark"] {
     --bg-mybtn: rgb(230, 109, 129);
-    --bg-nav: #6617cb;
-    --bg-nav-img: linear-gradient(315deg, #6617cb 0%, #882463 74%);
-    --bg-footer: linear-gradient(315deg, #6617cb 0%, #882463 74%);
+    --bg-nav: #1729cb;
+    --bg-nav-img: linear-gradient(315deg, #1723cb 0%, #882463 74%);
+    --bg-footer: linear-gradient(315deg, #2917cb 0%, #882463 74%);
     --bg: #191919;
     --text: #ffffff;
     --text-color: #fff;
@@ -72,7 +72,7 @@ html[data-theme="light"] {
   }
   
   ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px #bb86fc;
+    -webkit-box-shadow: inset 0 0 6px #000e91;
     border-radius: 2px;
     background: #f1f1f1;
   }
@@ -80,20 +80,20 @@ html[data-theme="light"] {
   ::-webkit-scrollbar-thumb {
     border-radius: 2px;
     max-height: 10px;
-    -webkit-box-shadow: inset 0 0 6px #bb86fc;
-    background: #bb86fc;
+    -webkit-box-shadow: inset 0 0 6px #000e91;
+    background: #000e91;
     transition: 0.3s;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: #ca9eff;
+    background: #2d1cca;
     
   }
   
   /* Custom Scrollbar for Mozilla Firefox*/
   html{
     overflow-y: visible;
-    scrollbar-color: #ca9eff #f1f1f1;
+    scrollbar-color: #9ec0ff #f1f1f1;
     scrollbar-width: auto;
   }
   
@@ -115,7 +115,7 @@ html[data-theme="light"] {
   #btnScrollToTop {
     width: 50px;
     height: 50px;
-    background-color: #bb86fc;
+    background-color: #8692fc;
     color: #fff;
     margin: 8px;
     border: none;
@@ -231,10 +231,20 @@ html[data-theme="light"] {
     font-family: Agustina;
     font-size: 30px;
     font-weight: bold;
+    /* background-color: #fff020; */
+  }
+
+  .navbar-brand::after{
+    content:'';
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    z-index: -1;
   }
   
   .navbar {
-    color: #000000;
+    color: #ffffff;
     background-color: #fff;
     z-index: 2;
     box-shadow: 0 2px 2px rgb(230, 230, 230);
@@ -265,41 +275,41 @@ html[data-theme="light"] {
     background-color: navy;
     border-radius: 50px;
     transition: all 0.9s;
-    background-color: #f7ca33;
+    background-color: #fcf047;
   }
   
   .dark_toggler:checked {
     background-image: url(../images/night.png);
     transition: background-image 0.9s;
-    box-shadow: 0px 2px 5px 1px rgb(187, 134, 201);
+    box-shadow: 0px 2px 5px 1px rgb(134, 150, 201);
   }
   
   .dark_toggler:checked:before {
     transform: translate(150%);
     transition: all 0.9s;
-    background-color: #bb86fc;
+    background-color: #140692;
   }
   /* end of dark mode toggle switch button */
   
   html {
-    background-color: #f6f6f6;
+    background-color: #fcf047;
     transition: background-color .3s;
   }
   
   html[light-mode="dark"] {
     background-color: #141516;
-    color: #ced4e2;
+    color: #fcf047;
   }
   
   .dark-theme {
-    background-color: #2b2a2A;
+    background-color: #2244db;
     transition: background-color .3s;
     box-shadow: 0 0 0;
   }
   
   .dark-theme .navbar-nav .nav-link,
   .dark-theme .navbar-brand {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgb(255, 255, 255);
   }
   
   .dark-theme .nav-link:hover{
@@ -314,7 +324,7 @@ html[data-theme="light"] {
   .dsc{
      box-shadow:   2px 5px 5px 0px rgb(130 216 251), 
      inset -2px -5px 5px 0px rgb(130 216 251);
-     background: #1f1d1d;
+     background: #0a25c0;
   }
   /*
   -------------------------------------
@@ -394,7 +404,7 @@ html[data-theme="light"] {
         margin-right: auto;
         bottom: 0;
         width: 32%;
-        border-bottom: 3px solid #6a00bb;
+        border-bottom: 3px solid #0c00bb;
     }
     
     .nav-item-hover::after {
@@ -405,7 +415,7 @@ html[data-theme="light"] {
         height: 0.15em;
         bottom: 0;
         width: 0%;
-        background-color: #6a00bb;
+        background-color: #fcf047;
         transition: all ease-in-out 280ms;
     }
     
@@ -419,6 +429,8 @@ html[data-theme="light"] {
     }
     a.nav-link {
         padding: 6px 21px !important;
+        font-weight: bold;
+        display: inline-block;
     }
   
     /* Hide svg on laptop screens to prevent overlap between sidebar and navbar */
@@ -429,13 +441,17 @@ html[data-theme="light"] {
   
   /* navbar hover for light mode */
   html[light-mode="light"] .nav-link{
-    color: #000000 !important;
+    color: #2810ff !important;
   }
   html[light-mode="light"] .nav-link:hover{
-    color: 	rgb(106, 0, 187) !important;
+    color: 	#020068 !important;
+  }
+  html[light-mode="light"] .navbar-brand{
+    color: #000000;
+    background-color: #fcf047;
   }
   html[light-mode="light"] .navbar-brand:hover{
-    color: #000000 !important;
+    color: #2e00fd;
   }
   
   @media (min-width: 992px) {
@@ -454,7 +470,7 @@ html[data-theme="light"] {
     align-items: center;
     cursor: pointer;
     transition: all .2s ease-in-out;
-    border-color: white;
+    border-color: rgb(17, 0, 255);
     border: none;
     outline: none;
     padding: 0;
@@ -799,7 +815,7 @@ html[data-theme="light"] {
     font-size: 25px;
     font-weight: 200;
     line-height: 22px;
-    border-bottom: 3px solid #bb86fc;
+    border-bottom: 3px solid #868efc;
   }
   
   .form-header {
@@ -828,7 +844,7 @@ html[data-theme="light"] {
   }
   
   .form-style-6 h1 {
-    background: #bb86fc;
+    background: #868efc;
     font-size: 140%;
     font-weight: 300;
     text-align: center;
@@ -858,7 +874,7 @@ html[data-theme="light"] {
     background: transparent;
     margin-bottom: 4%;
     border: #000;
-    border-bottom: 2px solid #bb86fc;
+    border-bottom: 2px solid #868efc;
     padding: 3%;
     color: rgb(107, 105, 105);
     font: 95% Arial, Helvetica, sans-serif;
@@ -875,9 +891,9 @@ html[data-theme="light"] {
   .form-style-6 input[type="url"]:focus,
   .form-style-6 textarea:focus,
   .form-style-6 select:focus {
-    box-shadow: 0 0 5px #bb86fc;
+    box-shadow: 0 0 5px #868efc;
     padding: 3%;
-    border: 1px solid #bb86fc;
+    border: 1px solid #868efc;
     border-radius: 2px;
   }
   
@@ -889,8 +905,8 @@ html[data-theme="light"] {
     width: 100%;
     margin-top: 2rem;
     padding: 3%;
-    background: #bb86fc;
-    border-bottom: 2px solid #bb86fc;
+    background: #868efc;
+    border-bottom: 2px solid #868efc;
     border-radius: 23px;
     border-top-style: none;
     border-right-style: none;
@@ -901,7 +917,7 @@ html[data-theme="light"] {
   
   .form-style-6 input[type="submit"]:hover,
   .form-style-6 input[type="button"]:hover {
-    background:#6a00bbd2;;
+    background:#0c00bbd2;;
   
   }
   
@@ -1030,7 +1046,7 @@ html[data-theme="light"] {
     border-radius: 50px;
     border-style: none;
     transition: 0.5s ease background-color, 0.5s ease box-shadow;
-    background: #bb86fc;
+    background: #868efc;
   }
   #lnch_btn {
     position: absolute;

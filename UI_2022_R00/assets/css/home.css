@@ -58,7 +58,6 @@ html[data-theme="light"] {
   
   .text .header {
     font-weight: bold;
-    
   }
   
   .text {
@@ -606,9 +605,42 @@ html[data-theme="light"] {
     /* position: fixed; */
     /* top: 0; */
     /* left: 0; */
-    /* background: #000; */
+    background: rgba(255, 255, 255, 0.048);
     opacity: 1;
     /* z-index: 998; */
     /* height: 100%; */
     /* width: 100%;} */
+  }
+
+  @import url('../fonts/RedHatDisplay/RedHatDisplay-Regular.woff');
+
+  .top_heading {
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: bold;
+    height: 20vh;
+    width: 30vh;
+    place-content: center;
+    display: grid;
+    font-size: 8vh;
+    max-width: 75vw;
+    color: #0400ff;
+  }
+  .top_heading_text{
+      background-image: linear-gradient(
+                        transparent calc(65% - 5px),
+                        darken(#0400ff, 15%) 5px,
+                        );
+      background-size: 0;
+      background-repeat: no-repeat;
+      display: inline;
+      transition: 0.5s ease;
+  }
+  
+  .top_heading_text:hover {
+        background-size: 100%;
+    }
+
+  .bot_heading {
+    background-color: #fae35e;
+    overflow: auto;
   }
