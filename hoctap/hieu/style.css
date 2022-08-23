@@ -16,6 +16,8 @@ body {
     margin-right: 0px;
     display: inline;
     font-size: 20px;
+    margin: 0;
+    width: 100%;
 }
  
 header {  
@@ -27,7 +29,7 @@ top: 0;
 height: 50px;  
 display: flex;  
 align-items: center;  
-box-shadow: 0 0 25px 0 black; 
+box-shadow: 0 0 25px 0 black;
 }  
 header * {  
 display: inline;  
@@ -39,3 +41,22 @@ header li a {
 color: blue;  
 text-decoration: none;  
 }  
+.navright{
+  /* right: 0; */
+  position: relative;
+  /* margin-right: 0; */
+  float: right;
+}
+.navleft{
+  /* right: 0; */
+  position: relative;
+  /* margin-right: 0; */
+  float: left;
+}
+.logo{
+  width: 55px;
+  height: 55px;
+  display:block;
+  margin-left: 50%;
+  margin-right: 50%;
+}
