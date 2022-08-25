@@ -1,0 +1,249 @@
+/*------------------------------------------------------------------
+    IMPORT FONTS
+-------------------------------------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,600i,700,700i,800,800i');
+@import url('https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400i,700,700i');
+
+
+/*
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-family: 'Quattrocento Sans', sans-serif;
+
+*/
+
+/*------------------------------------------------------------------
+    SKELETON
+-------------------------------------------------------------------*/
+body {
+    color: #666666;
+    font-size: 15px;
+    font-family: 'Quattrocento Sans', sans-serif;
+    line-height: 1.80857;
+}
+a {
+    color: #1f1f1f;
+    text-decoration: none !important;
+    outline: none !important;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+h1, h2, h3, h4, h5, h6 {
+    letter-spacing: 0;
+    font-weight: normal;
+    position: relative;
+    padding: 0 0 10px 0;
+    font-weight: normal;
+    line-height: 120% !important;
+    color: #1f1f1f;
+    margin: 0 
+}
+h1 {
+    font-size: 24px 
+}
+h2 {
+    font-size: 22px 
+}
+h3 {
+    font-size: 18px 
+}
+h4 {
+    font-size: 16px 
+}
+h5 {
+    font-size: 14px 
+}
+h6 {
+    font-size: 13px 
+}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    color: #212121;
+    text-decoration: none!important;
+    opacity: 1 
+}
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+    opacity: .8 
+}
+a {
+    color: #1f1f1f;
+    text-decoration: none;
+    outline: none;
+}
+a, .btn {
+    text-decoration: none !important;
+    outline: none !important;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+.btn-custom {
+    margin-top: 20px;
+    background-color: transparent !important;
+    border: 2px solid #ddd;
+    padding: 12px 40px;
+    font-size: 16px;
+}
+.lead {
+    font-size: 18px;
+    line-height: 30px;
+    color: #767676;
+    margin: 0;
+    padding: 0;
+}
+blockquote {
+    margin: 20px 0 20px;
+    padding: 30px;
+}
+ul, li, ol{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+button:focus{
+    outline: none;
+    box-shadow: none;
+}
+:focus {
+    outline: 0;
+}
+p{
+    margin: 0px;
+}
+.bootstrap-select .dropdown-toggle:focus{
+    outline: none !important;
+}
+.form-control::-moz-placeholder {
+    color: #ffffff;
+    opacity: 1;
+}
+.bootstrap-select .dropdown-toggle:focus{
+    box-shadow: none !important 
+}
+
+.hvr-hover{
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    background: #d33b33;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    border-radius: 0;
+    box-shadow: none;
+}
+.hvr-hover::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #010101;
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+.hvr-hover:hover::after{
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    color: #ffffff;
+}
+.hvr-hover{
+}
+
+/*------------------------------------------------------------------ Slider -------------------------------------------------------------------*/
+.cover-slides{
+    height: 100vh;
+}
+.slides-navigation a {
+    background: #d33b33;
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    top: 50%;
+    font-size: 20px;
+    display: block;
+    color: #fff;
+    line-height: 90px;
+    text-align: center;
+    transition: all .3s ease-in-out;
+}
+.slides-navigation a i{
+    font-size: 40px;
+}
+.slides-navigation a:hover {
+    background: #010101;
+}
+.cover-slides .container{
+    height: 100%;
+    position: relative;
+    z-index: 2;
+}
+.cover-slides .container > .row {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.cover-slides .container > .row {
+    height: 100%;
+}
+.overlay-background {
+    background: #333;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0.5;
+}
+.cover-slides h1{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 64px;
+    color: #fff;
+}
+.cover-slides p{
+    font-size: 18px;
+    color: #fff;
+    padding-bottom: 30px;
+}
+.slides-pagination a{
+    border: 2px solid #ffffff;
+}
+.slides-pagination a.current{
+    background: #d33b33;
+    border: 2px solid #d33b33;
+}
+.cover-slides p a{
+    font-size: 24px;
+    color: #ffffff;
+    border: none;
+    text-transform: uppercase;
+    padding: 10px 20px;
+}
+
+.slides-navigation a.prev {
+    left: 0;
+  }
+.slides-navigation a.next {
+    right: 0;
+  }

@@ -605,7 +605,7 @@ html[data-theme="light"] {
     /* position: fixed; */
     /* top: 0; */
     /* left: 0; */
-    background: rgba(255, 255, 255, 0.048);
+    background: rgba(255, 255, 255, 0);
     opacity: 1;
     /* z-index: 998; */
     /* height: 100%; */
