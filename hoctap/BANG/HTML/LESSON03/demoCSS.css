@@ -1,6 +1,16 @@
-body {
-    background-image: url("bangtech.png");
-}
+/* .mybody {
+    background-image: url('./IMAGES/bangtech.png');
+
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
 .text_red {
     color: #a53030;
+    background-color: #574848;
+}
+body, html{
+    height: 100%;
+    background-image: url('./IMAGES/bangtech.png');
 }
