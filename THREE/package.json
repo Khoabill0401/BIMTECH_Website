@@ -11,7 +11,6 @@
   "author": "KHOA",
   "license": "ISC",
   "devDependencies": {
-    "three": "^0.143.0",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.10.0",
@@ -19,15 +18,28 @@
   },
   "dependencies": {
     "babel-loader": "^8.2.5",
-    "clean-webpack-plugin": "^4.0.0",
+    "camera-controls": "^1.36.2",
+    "chalk": "^5.0.1",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
-    "file-loader": "^6.2.0",
+    "dat.gui": "^0.7.9",
+    "dexie": "^3.2.2",
     "html-loader": "^4.1.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",
+    "nodemon": "^2.0.19",
     "portfinder-sync": "^0.0.2",
     "raw-loader": "^4.0.2",
-    "style-loader": "^3.3.1"
+    "request": "^2.79.0",
+    "run": "^1.4.0",
+    "stats.js": "^0.17.0",
+    "style-loader": "^3.3.1",
+    "three": "^0.135.0",
+    "update": "^0.7.4",
+    "validator": "^13.7.0",
+    "web-ifc": "^0.0.35",
+    "web-ifc-three": "^0.0.119",
+    "web-ifc-viewer": "^1.0.210",
+    "yargs": "^17.5.1"
   }
 }

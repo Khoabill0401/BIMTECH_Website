@@ -4,7 +4,7 @@ const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
 
 module.exports = {
-    entry: path.resolve(__dirname, '../src/script.js'),
+    entry: path.resolve(__dirname, '../src/viewer.js'),
     output:
     {
         hashFunction: 'xxhash64',
@@ -17,6 +17,7 @@ module.exports = {
         new CopyWebpackPlugin({
             patterns: [
                 { from: path.resolve(__dirname, '../static') }
+                // { from: path.resolve(__dirname, '../IFC') }
             ]
         }),
         new HtmlWebpackPlugin({

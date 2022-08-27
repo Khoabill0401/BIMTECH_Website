@@ -1,2 +1,0 @@
-(()=>{"use strict";const e=new THREE.Scene,n=new THREE.BoxGeometry(1,2,1),o=new THREE.MeshBasicMaterial({color:16711680}),s=new THREE.Mesh(n,o);e.add(s);const t=new THREE.PerspectiveCamera(90,800/600,1,1e3);t.position.z=5,t.position.x=1,t.position.y=0,e.add(t);const r=document.querySelector(".webgl"),E=new THREE.WebGLRenderer({canvas:r});E.setSize(800,600),E.render(e,t)})();
-//# sourceMappingURL=bundle.0bd70dfb476387c2.js.map
