@@ -1,0 +1,46 @@
+.nav{
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    margin: 0;
+}
+.navlist{
+    background-color: rgb(18,81,249);
+    position: relative;
+    margin: 0;
+    display:flex;
+    list-style-type: none ;
+    justify-content: flex-end;
+}
+.navitem{
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: white;
+ 
+}
+body{
+    margin: 0;
+    position: relative;
+}
+.logo{
+    background-color: rgb(222,235,247);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+.logo1{
+    margin: 10px;
+}
+.logo2{
+    margin: 10px;
+}
+.title1{
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}

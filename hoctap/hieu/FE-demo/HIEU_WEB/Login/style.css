@@ -1,0 +1,140 @@
+.nav{
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    margin: 0;
+}
+.navlist{
+    background-color: rgb(18,81,249);
+    position: relative;
+    margin: 0;
+    display:flex;
+    list-style-type: none ;
+    justify-content: flex-end;
+}
+.navitem{
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: white;
+ 
+}
+body{
+    margin: 0;
+    position: relative;
+}
+.logo{
+    background-color: rgb(222,235,247);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+.logo2{
+    margin: 10px;
+    width: 60px;
+    height: 60px;
+}
+.nav1{
+    background-color: rgb(222,235,247);
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+.nav1list{
+    display: inline-block;
+    display: flex;
+    list-style-type: none ;
+    margin-left: 10px;
+}
+.nav1item{
+    display: inline-block;
+    margin: 10px;
+}
+.logins{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+.login{
+    display: inline-block;
+}
+.account{
+    background-color:rgba(0,0,0,0);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    width: 300px;
+    height: 280px;
+}
+.loginlogo{
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+.logintext1{
+    position: relative;
+    margin-left: 50%;
+    margin-right: 50%;
+}
+.logintext2{
+    position: relative;
+    margin-left: 50%;
+}
+.logins{
+    background-color: aqua;
+    background-image: url(logo9.jpg);
+    position: relative;
+}
+.toplogin{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    margin-bottom: 0;
+}
+.toploginitem{
+    display: inline-block;
+    margin: 10;
+}
+.input{
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-right: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+.buttonlogin{
+    width: 100%;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-right: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(18,81,249);
+    color: white;
+}
+.underinput{
+    display: block;
+    margin-left: 30%;  
+}
+.mxh{
+    display: flex;
+    margin-left: 10%;
+}
+.mxh1{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.mxh2{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.mxh3{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
