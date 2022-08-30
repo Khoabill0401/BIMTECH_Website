@@ -29,7 +29,7 @@
 }
 
 #navbar__logo {
-    background-color: #ffff;
+    background-color: rgb(248, 112, 112);
     background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
     background-size: 100%;
     -webkit-background-clip: text;
@@ -48,7 +48,7 @@
 }
 
 .navbar__menu {
-    display: flex;
+    display: inline;
     align-items: center;
     list-style: none;
     text-align: center;
@@ -56,11 +56,12 @@
 
 .navbar__item {
     height: 80px;
+    float:left;
 }
 
 .navbar__links {
-    color: #fff;
-    display: flex;
+    color: rgb(255, 133, 133);
+    display: inline;
     align-items: center;
     justify-content: center;
     text-decoration: none;
@@ -73,11 +74,12 @@
     justify-content: center;
     align-items: center;
     padding: 0 1rem;
+    float:left;
     width: 100%;
 }
 
 .button {
-    display: flex;
+    display: inline;
     justify-content: center;
     align-items: center;
     text-decoration: none;
@@ -190,4 +192,4 @@
     #moblie-menu.is-active .bar:nth-child(2) {
         opacity: 2;
     
-}
+}}
