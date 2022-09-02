@@ -35,10 +35,10 @@ fontLoader.load(
     {
         // Material
         const material = new THREE.MeshMatcapMaterial({ matcap: matcapTexture })
-
+        
         // Text
         const textGeometry = new TextGeometry(
-            'Hello Three.js',
+            'ANKOBIM',
             {
                 font: font,
                 size: 0.5,
@@ -52,6 +52,7 @@ fontLoader.load(
             }
         )
         textGeometry.center()
+        material.wireframe = true
 
         const text = new THREE.Mesh(textGeometry, material)
         scene.add(text)

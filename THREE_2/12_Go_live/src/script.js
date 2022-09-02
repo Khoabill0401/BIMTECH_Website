@@ -37,7 +37,7 @@ fontLoader.load(
 
         // Text
         const textGeometry = new TextGeometry(
-            'Bruno Simon',
+            'BIMTECH',
             {
                 font: font,
                 size: 0.5,

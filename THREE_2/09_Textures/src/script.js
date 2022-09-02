@@ -52,14 +52,14 @@ const colorTexture = textureLoader.load(
     }
 )
 colorTexture.wrapS = THREE.MirroredRepeatWrapping
-colorTexture.wrapT = THREE.MirroredRepeatWrapping
-// colorTexture.repeat.x = 2
-// colorTexture.repeat.y = 3
-// colorTexture.offset.x = 0.5
-// colorTexture.offset.y = 0.5
-// colorTexture.rotation = Math.PI * 0.25
-// colorTexture.center.x = 0.5
-// colorTexture.center.y = 0.5
+colorTexture.wrapT = THREE.RepeatWrapping
+colorTexture.repeat.x = 2
+colorTexture.repeat.y = 3
+colorTexture.offset.x = 0.5
+colorTexture.offset.y = 0.5
+colorTexture.rotation = Math.PI * 0.25
+colorTexture.center.x = 0.5
+colorTexture.center.y = 0.5
 colorTexture.generateMipmaps = false
 colorTexture.minFilter = THREE.NearestFilter
 colorTexture.magFilter = THREE.NearestFilter
