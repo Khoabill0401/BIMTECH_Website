@@ -17,7 +17,7 @@ const parameters = {
     directionalIntensity: 1,
     highlightColor: 0xff0000,
     floorColor: 0x00ff00,
-    backgroundScene: 0x00a0f0,
+    backgroundScene: 0x000000,
 }
 
 // Canvas
@@ -30,71 +30,72 @@ scene.background = new THREE.Color( parameters.backgroundScene );
 /**
  * Models
  */
-// const dracoLoader = new DRACOLoader()
-// dracoLoader.setDecoderPath('/draco/')
+const dracoLoader = new DRACOLoader()
+dracoLoader.setDecoderPath('/draco/')
 
-// const gltfLoader = new GLTFLoader()
-// gltfLoader.setDRACOLoader(dracoLoader)
+const gltfLoader = new GLTFLoader()
+gltfLoader.setDRACOLoader(dracoLoader)
 
 const ifcLoader = new IFCLoader();
+console.log(ifcLoader)
 ifcLoader.ifcManager.setWasmPath( '/ifc/' );
 
 let mixer = null
 
-// gltfLoader.load(
-//     '/models/Fox/glTF/Fox.gltf',
-//     (gltf) =>
-//     {
-//         gltf.scene.scale.set(0.025, 0.025, 0.025)
-//         scene.add(gltf.scene)
+gltfLoader.load(
+    '/models/Fox/glTF/Fox.gltf',
+    (gltf) =>
+    {
+        gltf.scene.scale.set(0.025, 0.025, 0.025)
+        scene.add(gltf.scene)
 
-//         // Animation
-//         mixer = new THREE.AnimationMixer(gltf.scene)
-//         const action = mixer.clipAction(gltf.animations[2])
-//         action.play()
-//     }
+        // Animation
+        mixer = new THREE.AnimationMixer(gltf.scene)
+        const action = mixer.clipAction(gltf.animations[2])
+        action.play()
+    }
+)
+
+// ifcLoader.load( '/ifc/RAC_basic_sample_project.ifc', 
+//     (model) =>
+//     {
+//         scene.add( model);
+//         model.position.set(120, 0, -50)
+//         model.rotation.set(0, -Math.PI/4, 0)
+//     } 
 // )
 
-ifcLoader.load( '/ifc/RAC_basic_sample_project.ifc', 
-    (model) =>
-    {
-        scene.add( model);
-        model.position.set(120, 0, -50)
-        model.rotation.set(0, -Math.PI/4, 0)
-    } 
-)
+// ifcLoader.load( '/ifc/04.ifc', 
+//     (model2) =>
+//     {
+//         scene.add( model2);
+//         model2.position.set(100, 0, 30)
+//     } 
+// )
 
-ifcLoader.load( '/ifc/04.ifc', 
-    (model2) =>
-    {
-        scene.add( model2);
-        model2.position.set(100, 0, 30)
-    } 
-)
-
-ifcLoader.load( '/ifc/05.ifc', 
-    (model3) =>
-    {
-        scene.add( model3);
-        model3.position.set(0, 0, 0)
-    } 
-)
+// ifcLoader.load( '/ifc/05.ifc', 
+//     (model3) =>
+//     {
+//         scene.add( model3);
+//         model3.position.set(0, 0, 0)
+//     } 
+// )
 
 /**
  * Floor
  */
-// const floor = new THREE.Mesh(
-//     new THREE.PlaneGeometry(1000, 1000),
-//     new THREE.MeshStandardMaterial({
-//         color: parameters.floorColor,
-//         // metalness: 0,
-//         // roughness: 0.5
-//     })
-// )
-// floor.receiveShadow = true
-// floor.position.z = -3
-// floor.rotation.x = - Math.PI * 0.5
-// scene.add(floor)
+const floor = new THREE.Mesh(
+    new THREE.PlaneGeometry(1000, 1000),
+    new THREE.MeshStandardMaterial({
+        color: parameters.floorColor,
+        // metalness: 0,
+        // roughness: 0.5
+    })
+)
+floor.receiveShadow = true
+floor.position.z = -3
+floor.rotation.x = - Math.PI * 0.5
+scene.add(floor)
 
 /**
  * Lights
@@ -118,33 +119,33 @@ scene.add(directionalLight)
 const highlightMaterial = new THREE.MeshPhongMaterial( { color: parameters.highlightColor, depthTest: false, transparent: true, opacity: 0.5 } );
 
 // Select Object
-// function selectObject( event ) {
+function selectObject( event ) {
 
-//     if ( event.button != 0 ) return;
+    if ( event.button != 0 ) return;
 
-//     const mouse = new THREE.Vector2();
-//     mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-//     mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+    const mouse = new THREE.Vector2();
+    mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+    mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
 
-//     const raycaster = new THREE.Raycaster();
-//     raycaster.setFromCamera( mouse, camera );
+    const raycaster = new THREE.Raycaster();
+    raycaster.setFromCamera( mouse, camera );
 
-//     const intersected = raycaster.intersectObjects( scene.children, false );
-//     if ( intersected.length ) {
+    const intersected = raycaster.intersectObjects( scene.children, false );
+    if ( intersected.length ) {
 
-//         const found = intersected[ 0 ];
-//         const faceIndex = found.faceIndex;
-//         const geometry = found.object.geometry;
-//         const id = ifcLoader.ifcManager.getExpressId( geometry, faceIndex );
+        const found = intersected[ 0 ];
+        const faceIndex = found.faceIndex;
+        const geometry = found.object.geometry;
+        const id = ifcLoader.ifcManager.getExpressId( geometry, faceIndex );
 
-//         const modelID = found.object.modelID;
-//         ifcLoader.ifcManager.createSubset( { modelID, ids: [ id ], scene, removePrevious: true, material: highlightMaterial } );
-//         const props = ifcLoader.ifcManager.getItemProperties( modelID, id, true );
-//         console.log( props );
-//         renderer.render( scene, camera );
-//     }
+        const modelID = found.object.modelID;
+        ifcLoader.ifcManager.createSubset( { modelID, ids: [ id ], scene, removePrevious: true, material: highlightMaterial } );
+        const props = ifcLoader.ifcManager.getItemProperties( modelID, id, true );
+        console.log( props );
+        renderer.render( scene, camera );
+    }
 
-// }
+}
 
 // Debug
 const gui = new dat.GUI({
@@ -265,30 +266,3 @@ const tick = () =>
 }
 
 tick()
-
-class Game{
-    constructor(){
-        const game = this;
-        this.anims = ['Walking', 'Walking Backwards', 'Turn', 'Running', 'Pointing', 'Talking', 'Pointing Gesture'];
-    } 
-
-    init(){
-        game.loadNextAnim(loader);
-    }
-        
-    loadNextAnim(loader){
-        let anim = this.anims.pop();
-        const game = this;
-        loader.load( `${this.assetsPath}fbx/anims/${anim}.fbx`, function( object ){
-            game.player.animations[anim] = object.animations[0];
-            if (game.anims.length>0){
-                game.loadNextAnim(loader);
-            }else{
-                delete game.anims;
-                game.action = "Idle";
-                game.mode = game.modes.ACTIVE;
-                game.animate();
-            }
-        });	
-    }
-}  

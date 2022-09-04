@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title>TEST</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			body { margin: 0; }
+		</style>
+		<!-- <link rel="stylesheet" href="./libs/css/style.css"> -->
+	</head>
+	<body>
+		<!-- <canvas class="webgl"></canvas> -->
+		<script src="./libs/js/three.min.js"></script>
+		<script src="./node_modules/lil-gui/dist/lil-gui.esm.d.ts"></script>
+		<script src="./libs/js/inflate.min.js"></script>
+		<script src="./libs/js/Detector.js"></script>
+		<script src="./libs/js/OrbitControls.js"></script>
+		<script src="./libs/js/FBXLoader.js"></script>
+		<!-- <script src="./libs/js/IFCLoader.js"></script> -->
+		<!-- <script type="module" src="loader.js"></script> -->
+        <script src="game.js"></script>
+		<script>
+            document.addEventListener("DOMContentLoaded", function(){
+				const game = new Game();
+				window.game = game;//For debugging only
+			});
+		</script>
+	</body>
+</html>
