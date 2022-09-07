@@ -3,12 +3,14 @@ import * as THREE from 'three'
 import '../static/libs/inflate.min.js'
 import * as Detector from '../static/libs/Detector.js'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+import { FirstPersonControl } from 'web-ifc-viewer/dist/components/context/camera/controls/first-person-control'
 import * as dat from 'lil-gui'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js'
 import { IFCLoader } from 'three/examples/jsm/loaders/IFCLoader.js'
 import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader.js'
 import { Int8Attribute } from 'three'
+import { Vector3 } from 'three'
 
 /**
  * Base
@@ -44,24 +46,33 @@ scene.background = new THREE.Color( parameters.backgroundScene );
  */
 // Base camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 1000)
-camera.position.z = 30;
-camera.position.y = 8;
-camera.position.x = 18;
+camera.position.set(23, 13, 41)
+camera.rotation.set(-0.28, 0, 0)
+camera.quaternion.set(-0.11, 0, 0, 1)
 scene.add(camera)
 
 // Controls
 const controls = new OrbitControls(camera, canvas)
-controls.target.set(0, 0.75, 0)
+// controls.target.set(0, 0.75, 0)
+camera.position.set(23, 13, 41)
+camera.rotation.set(-0.28, 0, 0)
+// camera.quaternion.set(-0.11, 0, 0, 1)
+// console.log(controls.PerspectiveCamera)
+// controls.PerspectiveCamera.applyQuaternion(-0.11, 0, 0, 1)
+// console.log(camera.rotation)
+// console.log(controls)
 controls.enableDamping = true
+camera.quaternion.set(-0.11, 0, 0, 1)
+// console.log(controls)
 
 /**
  * Models
  */
-const dracoLoader = new DRACOLoader()
-dracoLoader.setDecoderPath('/draco/')
+// const dracoLoader = new DRACOLoader()
+// dracoLoader.setDecoderPath('/draco/')
 
-const gltfLoader = new GLTFLoader()
-gltfLoader.setDRACOLoader(dracoLoader)
+// const gltfLoader = new GLTFLoader()
+// gltfLoader.setDRACOLoader(dracoLoader)
 
 const ifcLoader = new IFCLoader();
 // console.log(ifcLoader)
@@ -71,20 +82,20 @@ const fbxLoader = new FBXLoader();
 
 let mixer = null
 
-gltfLoader.load(
-    '/models/Fox/glTF/Fox.gltf',
-    (gltf) =>
-    {   
-        gltf.scene.position.set(5, 0, 5)
-        gltf.scene.scale.set(0.025, 0.025, 0.025)
-        scene.add(gltf.scene)
+// gltfLoader.load(
+//     '/models/Fox/glTF/Fox.gltf',
+//     (gltf) =>
+//     {   
+//         gltf.scene.position.set(5, 0, 5)
+//         gltf.scene.scale.set(0.025, 0.025, 0.025)
+//         scene.add(gltf.scene)
 
-        // Animation
-        mixer = new THREE.AnimationMixer(gltf.scene)
-        const action = mixer.clipAction(gltf.animations[2])
-        action.play()
-    }
-)
+//         // Animation
+//         mixer = new THREE.AnimationMixer(gltf.scene)
+//         const action = mixer.clipAction(gltf.animations[2])
+//         action.play()
+//     }
+// )
 
 // ifcLoader.load( '/ifc/RAC_basic_sample_project.ifc', 
 //     (model) =>
@@ -186,9 +197,22 @@ ifcLoader.load( '/ifc/05.ifc',
  }
  
  // Debug
- const gui = new dat.GUI({
+ const gui = new dat.GUI
+ ({
      width: 400
  })
+
+//  const cameraOffset = new Vector3();
+
+ // gui cameraOffset
+const obj = 
+    {  
+        offsetLength: 10,
+        person: false  
+    };
+gui.add(camera.position, 'x').min(0).max(50).step(1).name('Camera Offset') // min, max, step
+gui.add(obj, 'person').name('Third Person')
+let cameraState = false
  
  // gui.hide()
  window.addEventListener('keydown', (event) =>
@@ -201,6 +225,7 @@ ifcLoader.load( '/ifc/05.ifc',
              gui.hide()
      }
  })
+
  
  // gui
  //     .addColor(parameters, 'ambientLight')
@@ -222,7 +247,7 @@ ifcLoader.load( '/ifc/05.ifc',
  //     })
  
  
- window.onpointerdown = selectObject;
+//  window.onpointerdown = selectObject;
  
  
  window.addEventListener('resize', () =>
@@ -269,14 +294,13 @@ class BasicCharacterControllerProxy {
 };
 
 class BasicCharacterController {
-    constructor(params)
+    constructor()
     {
-        this._Init(params);
+        this._Init();
     }
 
-    _Init(params) 
+    _Init() 
     {
-        this._params = params;
         this._decceleration = new THREE.Vector3(-0.0005, -0.0001, -5.0);
         this._acceleration = new THREE.Vector3(1, 0.25, 5.0);
         this._velocity = new THREE.Vector3(0, 0, 0);
@@ -302,7 +326,7 @@ class BasicCharacterController {
             });
     
             this._target = fbx;
-            this._params.scene.add(this._target);
+            scene.add(this._target);
     
             this._mixer = new THREE.AnimationMixer(this._target);
     
@@ -326,6 +350,7 @@ class BasicCharacterController {
             loader.load('walk.fbx', (a) => { _OnLoad('walk', a); });
             loader.load('run.fbx', (a) => { _OnLoad('run', a); });
             loader.load('idle.fbx', (a) => { _OnLoad('idle', a); });
+
         });
     }
 
@@ -356,26 +381,26 @@ class BasicCharacterController {
         const _R = controlObject.quaternion.clone();
     
         const acc = this._acceleration.clone();
-        if (this._input._keys.shift) 
+        if (this._input._keys.shift)
         {
             acc.multiplyScalar(2.0);
         }
     
-        if (this._input._keys.forward) 
+        if (this._input._keys.forward)
         {
             velocity.z += acc.z * timeInSeconds;
         }
-        if (this._input._keys.backward) 
+        if (this._input._keys.backward)
         {
             velocity.z -= acc.z * timeInSeconds;
         }
-        if (this._input._keys.left) 
+        if (this._input._keys.left)
         {
             _A.set(0, 1, 0);
             _Q.setFromAxisAngle(_A, 4.0 * Math.PI * timeInSeconds * this._acceleration.y);
             _R.multiply(_Q);
         }
-        if (this._input._keys.right) 
+        if (this._input._keys.right)
         {
             _A.set(0, 1, 0);
             _Q.setFromAxisAngle(_A, 4.0 * -Math.PI * timeInSeconds * this._acceleration.y);
@@ -438,13 +463,25 @@ class BasicCharacterControllerInput {
             case 87: // w
                 this._keys.forward = true;
             break;
+            case 38: // up
+                this._keys.forward = true;
+            break;
             case 65: // a
+                this._keys.left = true;
+            break;
+            case 37: // left
                 this._keys.left = true;
             break;
             case 83: // s
                 this._keys.backward = true;
             break;
+            case 40: // back
+                this._keys.backward = true;
+            break;
             case 68: // d
+                this._keys.right = true;
+            break;
+            case 39: // right
                 this._keys.right = true;
             break;
             case 32: // SPACE
@@ -463,13 +500,25 @@ class BasicCharacterControllerInput {
             case 87: // w
                 this._keys.forward = false;
             break;
+            case 38: // up
+                this._keys.forward = false;
+            break;
             case 65: // a
+                this._keys.left = false;
+            break;
+            case 37: // left
                 this._keys.left = false;
             break;
             case 83: // s
                 this._keys.backward = false;
             break;
+            case 40: // back
+                this._keys.backward = false;
+            break;
             case 68: // d
+                this._keys.right = false;
+            break;
+            case 39: // right
                 this._keys.right = false;
             break;
             case 32: // SPACE
@@ -714,10 +763,17 @@ class IdleState extends State {
 const clock = new THREE.Clock()
 let previousTime = 0
 
+let previousCameraPosition = new THREE.Vector3;
+let previousCameraRotation = new THREE.Vector3;
+previousCameraPosition.set(23, 13, 41);
+previousCameraRotation.set(-0.4, 0, 0);
+let check = true;
 class CharacterControllerDemo {
     constructor() 
-    {
-        this._Initialize();
+    {       
+        this._currentPosition = new THREE.Vector3();
+        this._currentLookat = new THREE.Vector3();
+        this._Initialize();  
     }
   
     _Initialize() 
@@ -731,43 +787,45 @@ class CharacterControllerDemo {
   
     _LoadAnimatedModel() 
     {
-        const params = 
-        {
-            camera: camera,
-            scene: scene,
-        }
-        this._controls = new BasicCharacterController(params);
+        // console.log()
+        // console.log(camera.rotation)
+        this._controls = new BasicCharacterController();
+        // console.log(camera.rotation)
     }
   
-    _LoadAnimatedModelAndPlay(path, modelFile, animFile, offset)
-    {
-        const loader = new FBXLoader();
-        loader.setPath(path);
-        loader.load(modelFile, (fbx) => 
-        {
-            fbx.scale.setScalar(0.01);
-            fbx.traverse(c => 
-                {
-                    c.castShadow = true;
-                }
-            );
-            fbx.position.copy(offset);
+    // _LoadAnimatedModelAndPlay(path, modelFile, animFile, offset)
+    // {
+    //     const loader = new FBXLoader();
+    //     loader.setPath(path);
+    //     loader.load(modelFile, (fbx) => 
+    //     {
+    //         fbx.scale.setScalar(0.01);
+    //         fbx.traverse(c => 
+    //             {
+    //                 c.castShadow = true;
+    //             }
+    //         );
+    //         fbx.position.copy(offset);
   
-            const anim = new FBXLoader();
-            anim.setPath(path);
-            anim.load(animFile, (anim) => 
-            {
-                const m = new THREE.AnimationMixer(fbx);
-                this._mixers.push(m);
-                const idle = m.clipAction(anim.animations[0]);
-                idle.play();
-            });
-            this._scene.add(fbx);
-        });
-    }
-  
+    //         const anim = new FBXLoader();
+    //         anim.setPath(path);
+    //         anim.load(animFile, (anim) => 
+    //         {
+    //             const m = new THREE.AnimationMixer(fbx);
+    //             this._mixers.push(m);
+    //             const idle = m.clipAction(anim.animations[0]);
+    //             idle.play();
+    //         });
+    //         this._scene.add(fbx);
+    //     });
+    //     console.log(camera.rotation)
+    // }
+    
     _RAF() 
     {
+        
+        // console.log(camera.rotation)
+
         requestAnimationFrame(
         (t) => 
         {
@@ -775,29 +833,93 @@ class CharacterControllerDemo {
             const deltaTime = elapsedTime - previousTime
             previousTime = elapsedTime
 
+            // console.log(camera.rotation)
             // Model animation
             if(mixer)
             {
                 mixer.update(deltaTime)
             }
-
+            // console.log(camera.rotation)
             // Update controls
-            controls.update()
+            // console.log(controls)
+            // controls.update()
+            // console.log(camera.rotation)
             if (this._previousRAF === null) 
             {
                 this._previousRAF = t;
             }
-  
-            this._RAF();
-            console.log(scene.children[4].position)
-            console.log(scene.children[4].rotation)
-            
+            // console.log(camera.rotation)
 
+            // camera.lookAt(scene.children[4].position)
+
+
+            // if (scene.children[4] !== undefined)
+            // {
+            //     console.log(scene.children[4].position)
+            //     camera.lookAt(scene.children[4].position)
+            // }
+
+            if (!obj.person)
+            {
+                if (!cameraState)
+                {
+                    if (check)
+                    {
+                        previousCameraPosition = camera.position;
+                        previousCameraRotation = camera.rotation;
+                        check = false;
+                    }
+                }
+                else
+                {   
+                    if (!check)
+                    {
+                        camera.position.set(previousCameraPosition.x, previousCameraPosition.y, previousCameraPosition.z);
+                        camera.rotation.set(previousCameraRotation.x, previousCameraRotation.y, previousCameraRotation.z);
+                        // console.log(camera.position)
+                        cameraState = false;
+                        check = true;
+                    }
+                }
+            }
+            else
+            {
+                cameraState = true
+                
+                // let idealOffset = new THREE.Vector3(5, 5, 5);
+                // idealOffset.applyQuaternion(camera.rotation);
+                // idealOffset.add(camera.position);
+
+                // let idealLookat = new THREE.Vector3(0, 10, 5);
+                // idealLookat.applyQuaternion(camera.rotation);
+                // idealLookat.add(camera.position);
+
+                // let tt = 1.0 - Math.pow(0.001, elapsedTime);
+
+                // this._currentPosition.lerp(idealOffset, tt);
+                // this._currentLookat.lerp(idealLookat, tt);
+
+                // camera.position.copy(this._currentPosition);
+                // camera.lookAt(this._currentLookat);
+            };
+
+
+            // console.log(scene.children[4].position)
+
+            this._RAF();
+            // console.log(scene.children[4].position)
+            // console.log(scene.children[4].rotation)
+            // console.log(camera.position)
+            // console.log(camera.rotation)
+            // console.log(camera.quaternion)
+            
             renderer.render(scene, camera);
             // camera.position.set(scene.children[3].position.x, scene.children[3].position.y + 5, scene.children[3].position.z - 20)
             // camera.rotation.set(scene.children[3].rotation)
             this._Step(t - this._previousRAF);
             this._previousRAF = t;
+
+            
             // console.log(camera.position)
             // console.log(fbx.position)
         });
@@ -805,6 +927,8 @@ class CharacterControllerDemo {
   
     _Step(timeElapsed) 
     {
+        // console.log(camera.rotation)
+
         const timeElapsedS = timeElapsed * 0.001;
         if (this._mixers) 
         {
@@ -815,6 +939,8 @@ class CharacterControllerDemo {
         {
             this._controls.Update(timeElapsedS);
         }
+
+
     }
 };
 
@@ -822,7 +948,10 @@ let _APP = null;
 
 window.addEventListener('DOMContentLoaded', () => 
 {
+    // console.log(camera.rotation)
+    camera.quaternion.set(-0.11, 0, 0, 1)
     _APP = new CharacterControllerDemo();
+    // console.log(camera.rotation)
 });
 
 
