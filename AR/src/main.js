@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // initialize MindAR 
     const mindarThree = new window.MINDAR.IMAGE.MindARThree({
       container: document.body,
-      imageTargetSrc: '../../assets/targets/course-banner.mind', 
+      imageTargetSrc: '../static/assets/targets/targets.mind', 
     });
     const {renderer, scene, camera} = mindarThree;
 
@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // create anchor
     const anchor = mindarThree.addAnchor(0);
     anchor.group.add(plane);
-
     // start AR
     await mindarThree.start();
     renderer.setAnimationLoop(() => {
@@ -26,7 +25,3 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   start();
 });
-
-http.listen(3000, function(){
-  console.log("Listening to port 3000");
-})
