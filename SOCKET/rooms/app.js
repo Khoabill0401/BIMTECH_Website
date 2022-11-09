@@ -28,9 +28,13 @@ io.on('connection', function(socket){
 	  socket.join(room);
   	  io.emit('rooms', getRooms('joined room'));
   });
-  socket.on('chat message', function(data){
-    io.in(data.room).emit('chat message', `${data.name}: ${data.msg}` );
-  });
+  socket.on('chat message', 
+    function(data)
+    {
+      var today = new Date();
+ 		  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+      io.in(data.room).emit('chat message', `${data.name}: ${data.msg}` + `    ` +  `${time}` );
+    });
   socket.on('set username', function(name){ 
 	  console.log(`username set to ${name}(${socket.id})`);
 	  socket.username = name; 
