@@ -4,6 +4,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HeaderComponent from "./components/HeaderComponent";
 import FooterComponent from "./components/FooterComponent";
 
+// user components:
+import RoutesWithUserChatComponent from "./components/user/RoutesWithUserChatComponent";
+// import UserChatComponent from "./components/user/UserChatComponent";
+
 // publicly available pages:
 import HomePage from "./pages/HomePage";
 import Library from "./pages/Library";
@@ -35,27 +39,33 @@ function App() {
     <BrowserRouter>
       <HeaderComponent />
       <Routes>
-        {/* publicly available routes: */}
-        <Route path="/home" element={<HomePage />} />
-        <Route path="/library" element={<Library />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/products" element={<ProductDetailsPage />} />
-        <Route path="/products/:id" element={<ProductDetailsPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/store" element={<Store />} />
-        <Route path="*" element="Page not exists 404" />
-        {/* <Route path="/" component={HomePage} /> in previous versions of react-router-dom */}
+        <Route element={<RoutesWithUserChatComponent />}>
 
-        {/* user protec routes: */}
-        <Route element={<ProtectedRoutesComponent admin={false} />}>
-          <Route path="/user" element={<UserProfilePage />} />
-          <Route path="/user/my-orders" element={<UserOrdersPage />} />
-          <Route path="/user/cart-details" element={<UserCartDetailsPage />} />
-          <Route
-            path="/user/order-details"
-            element={<UserOrderDetailsPage />}
-          />
+          {/* publicly available routes: */}
+          <Route path="/" element={<HomePage />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/library" element={<Library />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/products" element={<ProductDetailsPage />} />
+          <Route path="/products/:id" element={<ProductDetailsPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/store" element={<Store />} />
+          <Route path="*" element="Page not exists 404" />
+          {/* <Route path="/" component={HomePage} /> in previous versions of react-router-dom */}
+
+          {/* user protected routes: */}
+          <Route element={<ProtectedRoutesComponent admin={false} />}>
+            <Route path="/user" element={<UserProfilePage />} />
+            <Route path="/user/my-orders" element={<UserOrdersPage />} />
+            <Route path="/user/cart-details" element={<UserCartDetailsPage />} />
+            <Route
+              path="/user/order-details"
+              element={<UserOrderDetailsPage />}
+            />
+          </Route>
+
         </Route>
+
 
         {/* admin protected routes: */}
         <Route element={<ProtectedRoutesComponent admin={true} />}>
