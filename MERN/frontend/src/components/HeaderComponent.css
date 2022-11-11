@@ -13,11 +13,14 @@ i {
 
 .navbar-logo{
 	padding: 15px;
-	border-bottom-right-radius: 15px 15px;
+	/* border-bottom-right-radius: 20px 20px; */
 	color: #fff;
+	/* background-color: transparent; */
+	/* background-color: #aa2c28; */
 }
 .navbar-mainbg{
 	background-color: #284baa;
+	/* border-bottom-right-radius: 15px 15px; */
 	padding: 0px;
 }
 .navbar-log{
@@ -34,11 +37,13 @@ i {
 	left: 10px;
 	overflow: hidden;
 	position: relative;
+	/* background-color: transparent; */
+	/* background-color: aqua; */
 }
 #navbarSupportedContent ul{
 	padding: 0px;
 	margin: 0px;
-	margin-left: 30px;
+	margin-left: 50px;
 }
 #navbarSupportedContent ul li a i{
 	margin-right: 10px;
@@ -138,6 +143,7 @@ i {
 	}
 	.navbar-expand-custom .navbar-toggler {
 	    display: none;
+		background-color: transparent;
 	}
 	.navbar-expand-custom .navbar-collapse {
 	    display: -ms-flexbox!important;
