@@ -29,7 +29,7 @@ const CategoryCardComponent = ({ category, idx }) => {
                     Some quick example text to build on the card title and make up the
                     bulk of the card's content.
                 </Card.Text>
-                <LinkContainer to="/product-list">
+                <LinkContainer to="/products">
                     <Button variant="primary">Go to the Category</Button>
                 </LinkContainer>
             </Card.Body>

@@ -1,18 +1,19 @@
 .chat-btn {
     position: fixed;
-    right: 14px;
+    right: 10px;
     bottom: 30px;
     cursor: pointer;
-    background-color: rgb(52, 106, 255);
-    border-radius: 50px;
-    width: 50px;
-    height: 50px;
-    color: #fff;
-    font-size: 22px;
+    /* background-color: #0f487c; */
+    /* border-radius: 50px; */
+    /* width: 50px; */
+    /* height: 50px; */
+    color: #0f487c;
+    font-size: 45px;
     z-index: 2;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* align-items: 5px; */
 }
 
 .chat-btn .close {
@@ -47,7 +48,7 @@
 }
 
 .chat-header {
-    background-color: rgb(52, 106, 255);
+    background-color: #0f487c;
     padding: 13px;
     margin-bottom: 10px;
     border-radius: 5px 5px 0px 0px;
@@ -74,3 +75,8 @@
 .btn:focus {
     box-shadow: none;
 }
+
+.cht-msg {
+    max-height: 300px;
+    overflow: auto;
+  }

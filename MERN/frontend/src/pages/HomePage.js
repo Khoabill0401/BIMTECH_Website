@@ -16,6 +16,8 @@ const HomePage = () => {
     return (
         <>
             <br />
+            {/* <br />
+            <br /> */}
             <ProductCarouselComponent />
             <p class="indent" />
             <br />
