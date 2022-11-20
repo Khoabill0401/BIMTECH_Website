@@ -47,7 +47,7 @@ $(".navbar-toggler").click(function () {
 const HeaderComponent = () => {
     return (
         <nav class="navbar navbar-expand-custom navbar-mainbg">
-            <a class="navbar-brand navbar-logo" href="#">BIMTech</a>
+            <a class="navbar-brand navbar-logo" href="/home">BIMTech</a>
             {/* <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars text-white"></i>
             </button> */}
@@ -55,16 +55,16 @@ const HeaderComponent = () => {
                 <ul class="navbar-nav ml-auto">
                     <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
                     <li class="nav-item active">
-                        <a class="nav-link" href="javascript:void(0);" > Home</a>
+                        <a class="nav-link" href="/home" > Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="javascript:void(0);" > Spacor</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0);" > Store</a>
+                        <a class="nav-link" href="/store" > Store</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0);" > Libraries</a>
+                        <a class="nav-link" href="/library" > Libraries</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="javascript:void(0);" > Projects</a>
@@ -74,10 +74,10 @@ const HeaderComponent = () => {
             <div class="navbar-log" id="navbarSupportedContent">
                 <ul class="navbar-log">
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0);" > Sign Up</a>
+                        <a class="nav-link" href="/register" > Sign Up</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0);" > Log In</a>
+                        <a class="nav-link" href="/login" > Log In</a>
                     </li>
                 </ul>
             </div>
