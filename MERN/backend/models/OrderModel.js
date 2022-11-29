@@ -8,22 +8,26 @@ const orderSchema = mongoose.Schema({
         ref: User,
     },
     orderTotal: {
-        itemsCount: {type: Number, required: true},
-        cartSubtotal: {type: Number, required: true}
+        itemsCount: { type: Number, required: true },
+        cartSubtotal: { type: Number, required: true }
     },
     cartItems: [
         {
-            name: {type: String, required: true},
-            price: {type: Number, required: true},
-            image: {path: {type: String, required: true}},
-            quantity: {type: Number, required: true},
-            count: {type: Number, required: true}
+            name: { type: String, required: true },
+            price: { type: Number, required: true },
+            image: { path: { type: String, required: true } },
+            quantity: { type: Number, required: true },
+            count: { type: Number, required: true }
         }
     ],
+    paymentMethod: {
+        type: String,
+        required: true,
+    },
     transactionResult: {
-        status: {type: String},
-        createTime: {type: String},
-        amount: {type: Number}
+        status: { type: String },
+        createTime: { type: String },
+        amount: { type: Number }
     },
     isPaid: {
         type: Boolean,

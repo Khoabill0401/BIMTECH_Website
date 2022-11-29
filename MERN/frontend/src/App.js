@@ -15,7 +15,7 @@ import LoginPage from "./pages/LoginPage";
 import ProductDetailsPage from "./pages/ProductDetailsPage";
 import RegisterPage from "./pages/RegisterPage";
 import ProtectedRoutesComponent from './components/ProtectedRoutesComponent'
-import Store from "./pages/Store";
+import ProductListPage from "./pages/Store";
 
 // protected user pages:
 import UserCartDetailsPage from "./pages/user/UserCartDetailsPage";
@@ -51,7 +51,7 @@ function App() {
           <Route path="/products" element={<ProductDetailsPage />} />
           <Route path="/products/:id" element={<ProductDetailsPage />} />
           <Route path="/register" element={<RegisterPage />} />
-          <Route path="/store" element={<Store />} />
+          <Route path="/store" element={<ProductListPage />} />
           <Route path="*" element="Page not exists 404" />
           {/* <Route path="/" component={HomePage} /> in previous versions of react-router-dom */}
 
