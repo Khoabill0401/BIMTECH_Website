@@ -1,8 +1,8 @@
 const categories = [
     {
-    name: "Computers",
+    name: "BichDung",
     description:
-      "Computers - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
+      "BichDung - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
     image: "/Pic2.jpg",
     attrs: [
       { key: "XXX", value: ["1 QQ", "2 QQ", "4 QQ"] },
@@ -10,71 +10,71 @@ const categories = [
     ],
   },
   {
-    name: "Computers/Laptops",
+    name: "BichDung/anhkhoace",
     description:
-      "Computers/Laptops - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
-    image: "/images/tablets-category.png",
+      "BichDung/anhkhoace - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
+    image: "/Pic2.jpg",
   },
   {
-    name: "Computers/Laptops/Lenovo",
+    name: "BichDung/anhkhoace/type01",
     description:
-      "Computers/Laptops/Lenovo - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
-    image: "/images/tablets-category.png",
+      "BichDung/anhkhoace/type01 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
+    image: "/Pic2.jpg",
   },
   {
-    name: "Computers/Laptops/Dell",
+    name: "BichDung/anhkhoace/type02",
     description:
-      "Computers/Laptops/Dell - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
-    image: "/images/tablets-category.png",
+      "BichDung/anhkhoace/type02 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
+    image: "/Pic2.jpg",
   },
   {
-    name: "Tablets",
+    name: "Random1",
     description:
-      "Tablets - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
-    image: "/images/tablets-category.png",
+      "Random1 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
+    image: "/Pic2.jpg",
   },
   {
-    name: "Monitors",
+    name: "Random2",
     description:
-      "Monitors - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
-    image: "/images/monitors-category.png",
+      "Random2 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
+    image: "/Pic2.jpg",
   },
   {
-    name: "Games",
+    name: "Random3",
     description:
-      "Games - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
-    image: "/images/games-category.png",
+      "Random3 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
+    image: "/Pic2.jpg",
   },
   {
-    name: "Printers",
+    name: "Random4",
     description:
-      "Printers - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
-    image: "/images/tablets-category.png",
+      "Random4 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
+    image: "/Pic2.jpg",
   },
   {
-    name: "Software",
+    name: "Random5",
     description:
-      "Software - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
-    image: "/images/monitors-category.png",
+      "Random5 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
+    image: "/Pic2.jpg",
   },
   {
-    name: "Cameras",
+    name: "Random6",
     description:
-      "Cameras - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
-    image: "/images/games-category.png",
+      "Random6 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
+    image: "/Pic2.jpg",
   },
   {
-    name: "Books",
+    name: "Random7",
     description:
-      "Books - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
-    image: "/images/tablets-category.png",
+      "Random7 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
+    image: "/Pic2.jpg",
     attrs: [{ key: "genre", value: ["movie", "comedy", "thriller"] }],
   },
   {
-    name: "Videos",
+    name: "Random8",
     description:
-      "Videos - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
-    image: "/images/monitors-category.png",
+      "Random8 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
+    image: "/Pic2.jpg",
   },
 ]
 

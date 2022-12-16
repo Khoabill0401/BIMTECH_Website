@@ -1,90 +1,154 @@
-import './HeaderComponent.css';
-import $ from "jquery";
-var script = document.createElement('script');
-script.src = 'https://code.jquery.com/jquery-3.4.1.min.js';
-script.type = 'text/javascript';
-document.getElementsByTagName('head')[0].appendChild(script);
+import {
+    Navbar,
+    Nav,
+    Container,
+    NavDropdown,
+    Badge,
+    Form,
+    DropdownButton,
+    Dropdown,
+    Button,
+    InputGroup,
+} from "react-bootstrap";
 
-function test() {
-    var tabsNewAnim = $('#navbarSupportedContent');
-    var activeItemNewAnim = tabsNewAnim.find('.active');
-    var activeWidthNewAnimHeight = activeItemNewAnim.innerHeight();
-    var activeWidthNewAnimWidth = activeItemNewAnim.innerWidth();
-    var itemPosNewAnimTop = activeItemNewAnim.position();
-    var itemPosNewAnimLeft = activeItemNewAnim.position();
-    $(".hori-selector").css({
-        "top": itemPosNewAnimTop.top + "px",
-        "left": itemPosNewAnimLeft.left + "px",
-        "height": activeWidthNewAnimHeight + "px",
-        "width": activeWidthNewAnimWidth + "px"
-    });
-    $("#navbarSupportedContent").on("click", "li", function (e) {
-        $('#navbarSupportedContent ul li').removeClass("active");
-        $(this).addClass('active');
-        var activeWidthNewAnimHeight = $(this).innerHeight();
-        var activeWidthNewAnimWidth = $(this).innerWidth();
-        var itemPosNewAnimTop = $(this).position();
-        var itemPosNewAnimLeft = $(this).position();
-        $(".hori-selector").css({
-            "top": itemPosNewAnimTop.top + "px",
-            "left": itemPosNewAnimLeft.left + "px",
-            "height": activeWidthNewAnimHeight + "px",
-            "width": activeWidthNewAnimWidth + "px"
-        });
-    });
-}
-$(document).ready(function () {
-    setTimeout(function () { test(); });
-});
-$(window).on('resize', function () {
-    setTimeout(function () { test(); }, 500);
-});
-$(".navbar-toggler").click(function () {
-    $(".navbar-collapse").slideToggle(300);
-    setTimeout(function () { test(); });
-});
+import { LinkContainer } from "react-router-bootstrap";
+import { Link, useNavigate } from "react-router-dom";
+import { logout } from "../redux/actions/userActions";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { getCategories } from "../redux/actions/categoryActions";
+import socketIOClient from "socket.io-client";
+import { setChatRooms, setSocket, setMessageReceived, removeChatRoom } from "../redux/actions/chatActions";
 
 const HeaderComponent = () => {
-    return (
-        <nav class="navbar navbar-expand-custom navbar-mainbg">
-            <a class="navbar-brand navbar-logo" href="/home">BIMTech</a>
-            {/* <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fas fa-bars text-white"></i>
-            </button> */}
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/home" > Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0);" > Spacor</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/store" > Store</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/library" > Libraries</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0);" > Projects</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="navbar-log" id="navbarSupportedContent">
-                <ul class="navbar-log">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/register" > Sign Up</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login" > Log In</a>
-                    </li>
-                </ul>
-            </div>
-            {/* <div>
-            </div> */}
-        </nav>
-    );
-}
+    const dispatch = useDispatch();
+    const { userInfo } = useSelector((state) => state.userRegisterLogin);
+    const itemsCount = useSelector((state) => state.cart.itemsCount);
+    const { categories } = useSelector((state) => state.getCategories);
+    const { messageReceived } = useSelector((state) => state.adminChat);
 
-export default HeaderComponent
+    const [searchCategoryToggle, setSearchCategoryToggle] = useState("All");
+    const [searchQuery, setSearchQuery] = useState("");
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        dispatch(getCategories());
+    }, [dispatch]);
+
+    const submitHandler = (e) => {
+        if (e.keyCode && e.keyCode !== 13) return;
+        e.preventDefault();
+        if (searchQuery.trim()) {
+            if (searchCategoryToggle === "All") {
+                navigate(`/store/search/${searchQuery}`);
+            } else {
+                navigate(`/store/category/${searchCategoryToggle.replaceAll("/", ",")}/search/${searchQuery}`);
+            }
+        } else if (searchCategoryToggle !== "All") {
+            navigate(`/store/category/${searchCategoryToggle.replaceAll("/", ",")}`);
+        } else {
+            navigate("/store");
+        }
+    }
+
+    useEffect(() => {
+        if (userInfo.isAdmin) {
+            var audio = new Audio("/audio/chat-msg.mp3");
+            const socket = socketIOClient();
+            socket.emit("admin connected with server", "Admin" + Math.floor(Math.random() * 1000000000000));
+            socket.on("server sends message from client to admin", ({ user, message }) => {
+                dispatch(setSocket(socket));
+                //   let chatRooms = {
+                //     fddf54gfgfSocketID: [{ "client": "dsfdf" }, { "client": "dsfdf" }, { "admin": "dsfdf" }],
+                //   };
+                dispatch(setChatRooms(user, message));
+                dispatch(setMessageReceived(true));
+                audio.play();
+            })
+            socket.on("disconnected", ({ reason, socketId }) => {
+                //   console.log(socketId, reason)
+                dispatch(removeChatRoom(socketId));
+            })
+            return () => socket.disconnect();
+        }
+    }, [userInfo.isAdmin])
+
+    return (
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Container>
+                <LinkContainer to="/">
+                    <Navbar.Brand href="/">BIMTech.vn</Navbar.Brand>
+                </LinkContainer>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="me-auto">
+                        <InputGroup>
+                            <DropdownButton id="dropdown-basic-button" title={searchCategoryToggle}>
+                                <Dropdown.Item onClick={() => setSearchCategoryToggle("All")}>All</Dropdown.Item>
+                                {categories.map((category, id) => (
+                                    <Dropdown.Item key={id} onClick={() => setSearchCategoryToggle(category.name)}>{category.name}</Dropdown.Item>
+                                ))}
+                            </DropdownButton>
+                            <Form.Control onKeyUp={submitHandler} onChange={(e) => setSearchQuery(e.target.value)} type="text" placeholder="Search in website ..." />
+                            <Button onClick={submitHandler} variant="warning">
+                                <i className="bi bi-search text-dark"></i>
+                            </Button>
+                        </InputGroup>
+                    </Nav>
+                    <Nav>
+                        {userInfo.isAdmin ? (
+                            <LinkContainer to="/admin/orders">
+                                <Nav.Link>
+                                    Admin
+                                    {messageReceived && <span className="position-absolute top-1 start-10 translate-middle p-2 bg-danger border border-light rounded-circle"></span>}
+
+                                </Nav.Link>
+                            </LinkContainer>
+                        ) : userInfo.name && !userInfo.isAdmin ? (
+                            <NavDropdown
+                                title={`${userInfo.name} ${userInfo.lastName}`}
+                                id="collasible-nav-dropdown"
+                            >
+                                <NavDropdown.Item
+                                    eventKey="/user/my-orders"
+                                    as={Link}
+                                    to="/user/my-orders"
+                                >
+                                    My orders
+                                </NavDropdown.Item>
+                                <NavDropdown.Item eventKey="/user" as={Link} to="/user">
+                                    My profile
+                                </NavDropdown.Item>
+                                <NavDropdown.Item onClick={() => dispatch(logout())}>
+                                    Logout
+                                </NavDropdown.Item>
+                            </NavDropdown>
+                        ) : (
+                            <>
+                                <LinkContainer to="/login">
+                                    <Nav.Link>Login</Nav.Link>
+                                </LinkContainer>
+                                <LinkContainer to="/register">
+                                    <Nav.Link>Register</Nav.Link>
+                                </LinkContainer>
+                            </>
+                        )}
+
+                        <LinkContainer to="/library">
+                            <Nav.Link>
+                                <Badge pill bg="danger">
+                                    {itemsCount === 0 ? "" : itemsCount}
+                                </Badge>
+                                <i className="bi bi-cart-dash"></i>
+                                <span className="ms-1">CART</span>
+                            </Nav.Link>
+                        </LinkContainer>
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
+    );
+};
+
+export default HeaderComponent;

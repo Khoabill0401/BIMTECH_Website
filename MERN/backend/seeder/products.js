@@ -32,8 +32,8 @@ const products = [
     reviewsNumber: 5,
     reviews: [],
     attrs: [
-      { key: "color", value: "black" },
-      { key: "RAM", value: "1 TB" },
+      { key: "XXX", value: "YYY" },
+      { key: "ZZZ", value: "TTT" },
     ],
   },
   {
@@ -52,8 +52,8 @@ const products = [
     reviewsNumber: 5,
     reviews: [],
     attrs: [
-      { key: "color", value: "black" },
-      { key: "RAM", value: "1 TB" },
+      { key: "XXX", value: "YYY" },
+      { key: "ZZZ", value: "TTT" },
     ],
   },
   {

@@ -4,11 +4,21 @@ import AdminLinksComponent from "../../../components/admin/AdminLinksComponent";
 
 import { useState, useEffect } from "react";
 
-const UsersPageComponent = ({ fetchUsers }) => {
-  const [users, setUsers] = useState([]);
+import { logout } from "../../../redux/actions/userActions";
+import { useDispatch } from "react-redux";
 
-  const deleteHandler = () => {
-    if (window.confirm("Are you sure?")) alert("User deleted!");
+const UsersPageComponent = ({ fetchUsers, deleteUser }) => {
+  const [users, setUsers] = useState([]);
+  const [userDeleted, setUserDeleted] = useState(false);
+  const dispatch = useDispatch();
+
+  const deleteHandler = async (userId) => {
+    if (window.confirm("Are you sure?")) {
+      const data = await deleteUser(userId);
+      if (data === 'user removed') {
+        setUserDeleted(!userDeleted)
+      }
+    }
   };
 
   useEffect(() => {
@@ -16,12 +26,13 @@ const UsersPageComponent = ({ fetchUsers }) => {
     fetchUsers(abctrl)
       .then((res) => setUsers(res))
       .catch((er) =>
-        console.log(
-          er.response.data.message ? er.response.data.message : er.response.data
-        )
+        dispatch(logout())
+        // console.log(
+        //   er.response.data.message ? er.response.data.message : er.response.data
+        // )
       );
     return () => abctrl.abort();
-  }, []);
+  }, [userDeleted]);
 
   return (
     <Row className="m-5">
@@ -62,7 +73,7 @@ const UsersPageComponent = ({ fetchUsers }) => {
                     <Button
                       variant="danger"
                       className="btn-sm"
-                      onClick={deleteHandler}
+                      onClick={() => deleteHandler(user._id)}
                     >
                       <i className="bi bi-x-circle"></i>
                     </Button>
@@ -78,4 +89,3 @@ const UsersPageComponent = ({ fetchUsers }) => {
 };
 
 export default UsersPageComponent;
-

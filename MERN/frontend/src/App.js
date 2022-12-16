@@ -47,11 +47,21 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/library" element={<Library />} />
-          <Route path="/login" element={<LoginPage />} />
+
           <Route path="/products" element={<ProductDetailsPage />} />
           <Route path="/products/:id" element={<ProductDetailsPage />} />
-          <Route path="/register" element={<RegisterPage />} />
+
           <Route path="/store" element={<ProductListPage />} />
+          <Route path="/store/:pageNumParam" element={<ProductListPage/>} />
+          <Route path="/store/category/:categoryName" element={<ProductListPage/>} />
+          <Route path="/store/category/:categoryName/:pageNumParam" element={<ProductListPage/>} />
+          <Route path="/store/search/:searchQuery" element={<ProductListPage/>} />
+          <Route path="/store/search/:searchQuery/:pageNumParam" element={<ProductListPage/>} />
+          <Route path="/store/category/:categoryName/search/:searchQuery" element={<ProductListPage/>} />
+          <Route path="/store/category/:categoryName/search/:searchQuery/:pageNumParam" element={<ProductListPage/>} />
+
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
           <Route path="*" element="Page not exists 404" />
           {/* <Route path="/" component={HomePage} /> in previous versions of react-router-dom */}
 
@@ -61,28 +71,27 @@ function App() {
             <Route path="/user/my-orders" element={<UserOrdersPage />} />
             <Route path="/user/cart-details" element={<UserCartDetailsPage />} />
             <Route
-              path="/user/order-details"
+              path="/user/order-details/:id"
               element={<UserOrderDetailsPage />}
             />
           </Route>
-
         </Route>
 
 
         {/* admin protected routes: */}
         <Route element={<ProtectedRoutesComponent admin={true} />}>
           <Route path="/admin/users" element={<AdminUsersPage />} />
-          <Route path="/admin/edit-user" element={<AdminEditUserPage />} />
+          <Route path="/admin/edit-user/:id" element={<AdminEditUserPage />} />
           <Route path="/admin/products" element={<AdminProductsPage />} />
           <Route
             path="/admin/create-new-product"
             element={<AdminCreateProductPage />} />
           <Route
-            path="/admin/edit-product"
+            path="/admin/edit-product/:id"
             element={<AdminEditProductPage />} />
           <Route path="/admin/orders" element={<AdminOrdersPage />} />
           <Route
-            path="/admin/order-details"
+            path="/admin/order-details/:id"
             element={<AdminOrdersDetailsPage />} />
           <Route path="/admin/chats" element={<AdminChatsPage />} />
           <Route path="/admin/analytics" element={<AdminAnalyticsPage />} />

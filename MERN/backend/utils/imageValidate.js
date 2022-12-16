@@ -14,7 +14,7 @@ const imageValidate = (images) => {
 
         const filetypes = /jpg|jpeg|png/
         const mimetype = filetypes.test(image.mimetype)
-        if(!mimetype) return { error: "Incorrect mime type (should be jpg,jpeg or png" }
+        if(!mimetype) return { error: "Incorrect mime type (should be jpg, jpeg or png" }
     }
 
     return { error: false }
