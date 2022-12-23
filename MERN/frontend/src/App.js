@@ -38,7 +38,7 @@ import ScrollToTop from "./utils/ScrollToTop";
 function App() {
   return (
     <BrowserRouter>
-      <ScrollToTop />
+    <ScrollToTop />
       <HeaderComponent />
       <Routes>
         <Route element={<RoutesWithUserChatComponent />}>
@@ -63,20 +63,19 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="*" element="Page not exists 404" />
-          {/* <Route path="/" component={HomePage} /> in previous versions of react-router-dom */}
-
-          {/* user protected routes: */}
-          <Route element={<ProtectedRoutesComponent admin={false} />}>
-            <Route path="/user" element={<UserProfilePage />} />
-            <Route path="/user/my-orders" element={<UserOrdersPage />} />
-            <Route path="/user/cart-details" element={<UserCartDetailsPage />} />
-            <Route
-              path="/user/order-details/:id"
-              element={<UserOrderDetailsPage />}
-            />
-          </Route>
         </Route>
+        {/* <Route path="/" component={HomePage} /> in previous versions of react-router-dom */}
 
+        {/* user protected routes: */}
+        <Route element={<ProtectedRoutesComponent admin={false} />}>
+          <Route path="/user" element={<UserProfilePage />} />
+          <Route path="/user/my-orders" element={<UserOrdersPage />} />
+          <Route path="/user/cart-details" element={<UserCartDetailsPage />} />
+          <Route
+            path="/user/order-details/:id"
+            element={<UserOrderDetailsPage />}
+          />
+        </Route>
 
         {/* admin protected routes: */}
         <Route element={<ProtectedRoutesComponent admin={true} />}>
@@ -96,7 +95,6 @@ function App() {
           <Route path="/admin/chats" element={<AdminChatsPage />} />
           <Route path="/admin/analytics" element={<AdminAnalyticsPage />} />
         </Route>
-
       </Routes>
       <FooterComponent />
     </BrowserRouter>
