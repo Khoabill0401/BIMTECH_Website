@@ -5,6 +5,8 @@ html {
 
 body {
   margin-bottom: 170px;
+  min-height: 400px;
+  clear: both;
 }
 
 footer {

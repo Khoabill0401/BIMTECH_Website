@@ -1,9 +1,11 @@
 import ProductCarouselComponent from "../../components/ProductCarouselComponent";
 import CategoryCardComponent from "../../components/CategoryCardComponent";
 import { Row, Container } from "react-bootstrap";
+// import { MDBRow, Container } from "mdbreact";
 
 import { useEffect, useState } from "react";
 import MetaComponent from "../../components/MetaComponent";
+// import "../../index.css";
 
 const HomePageComponent = ({ categories, getBestsellers }) => {
 
@@ -28,7 +30,7 @@ const HomePageComponent = ({ categories, getBestsellers }) => {
       <MetaComponent />
       <ProductCarouselComponent bestSellers={bestSellers} />
       <Container>
-        <Row xs={1} md={2} className="g-4 mt-5">
+        <Row xs={1} md={3} className="g-4 mt-5 mb-5">
           {mainCategories.map((category, idx) => (
             <CategoryCardComponent key={idx} category={category} idx={idx} />
           ))}
